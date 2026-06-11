@@ -7,7 +7,7 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html{font-size:14px;-webkit-font-smoothing:antialiased}
-body{background:#0E1117;color:#E2E0D6;font-family:'Inter',system-ui,sans-serif;min-height:100vh;overflow-x:hidden}
+body{background:var(--bg0);color:var(--text1);font-family:'Inter',system-ui,sans-serif;min-height:100vh;overflow-x:hidden;transition:background .15s,color .15s}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer;border:none;background:none}
 :root{
@@ -19,7 +19,19 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   --red:#D95555;--red-bg:#2C0F0F;
   --purple:#7B6FD4;--purple-bg:#1A1830;
   --teal:#3AB5A0;--teal-bg:#0D2825;
+  --blue-bg:#0D1F35;
   --r4:4px;--r6:6px;--r8:8px;--r12:12px;
+}
+html[data-theme="light"]{
+  --bg0:#F4F5F7;--bg1:#FFFFFF;--bg2:#F0F1F5;--bg3:#E5E7ED;
+  --border:#DCDFE6;--border2:#C8CCD6;
+  --text1:#1B1E27;--text2:#6B6E79;--text3:#9DA1AC;
+  --accent:#2D6FB5;--green:#1E9268;--green-bg:#E2F4ED;
+  --amber:#C2790F;--amber-bg:#FBF0DC;
+  --red:#C5453F;--red-bg:#FBEAE9;
+  --purple:#6450C9;--purple-bg:#EDEAFB;
+  --teal:#1C8E82;--teal-bg:#E2F4F2;
+  --blue-bg:#E3EEFA;
 }
 .shell{display:flex;height:100vh;overflow:hidden}
 .sidebar{width:220px;flex-shrink:0;background:var(--bg1);border-right:1px solid var(--border);display:flex;flex-direction:column;overflow-y:auto}
@@ -27,6 +39,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .sb-logo{padding:18px 16px 14px;border-bottom:1px solid var(--border)}
 .sb-logo-title{font-size:12px;font-weight:600;color:var(--text1);letter-spacing:.06em;text-transform:uppercase}
 .sb-logo-sub{font-size:10px;color:var(--text3);margin-top:2px}
+.theme-toggle{display:flex;align-items:center;gap:6px;margin-top:10px;padding:5px 10px;font-size:11px;color:var(--text2);background:var(--bg2);border:1px solid var(--border);border-radius:var(--r6);cursor:pointer;transition:all .15s}
+.theme-toggle:hover{color:var(--text1);border-color:var(--border2)}
 .sb-section{padding:10px 8px 4px;font-size:10px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.07em}
 .sb-item{display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:6px;margin:1px 6px;font-size:12px;color:var(--text2);cursor:pointer;transition:all .15s}
 .sb-item:hover{background:var(--bg2);color:var(--text1)}
@@ -54,12 +68,12 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .tag-red{background:var(--red-bg);color:var(--red)}
 .tag-purple{background:var(--purple-bg);color:var(--purple)}
 .tag-teal{background:var(--teal-bg);color:var(--teal)}
-.tag-blue{background:#0D1F35;color:var(--accent)}
+.tag-blue{background:var(--blue-bg);color:var(--accent)}
 .tag-gray{background:var(--bg3);color:var(--text2)}
 .ev{display:inline-block;font-size:9px;font-weight:600;padding:1px 5px;border-radius:2px;vertical-align:middle;letter-spacing:.04em}
-.ev-c{background:#0D2E22;color:#2DA878}
-.ev-e{background:#0D1F35;color:#4A90D9}
-.ev-a{background:#2C1E08;color:#E8A040}
+.ev-c{background:var(--green-bg);color:var(--green)}
+.ev-e{background:var(--blue-bg);color:var(--accent)}
+.ev-a{background:var(--amber-bg);color:var(--amber)}
 .ev-t{background:var(--bg3);color:var(--text3)}
 .kpi{text-align:center;padding:12px 8px}
 .kpi-val{font-size:24px;font-weight:600;color:var(--text1);letter-spacing:-.5px}
@@ -85,10 +99,10 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .nb-ok{border-color:var(--green);background:var(--green-bg)}
 .nb-amber{border-color:var(--amber);background:var(--amber-bg)}
 .nb-purple{border-color:var(--purple);background:var(--purple-bg)}
-.nb-blue{border-color:var(--accent);background:#0D1F35}
+.nb-blue{border-color:var(--accent);background:var(--blue-bg)}
 .bc-box{background:var(--purple-bg);border:1.5px solid var(--purple);border-radius:var(--r8);padding:12px 16px}
 .bc-lbl{font-size:10px;font-weight:600;color:var(--purple);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px}
-.bc-val{font-size:15px;font-weight:600;color:#C0BAF0}
+.bc-val{font-size:15px;font-weight:600;color:var(--purple)}
 .map-wrap{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r8);overflow:hidden;position:relative}
 .map-wrap svg{display:block;width:100%}
 .map-node{cursor:pointer;transition:opacity .15s}
@@ -125,6 +139,9 @@ hr.div{border:none;border-top:1px solid var(--border);margin:14px 0}
   <div class="sb-logo">
     <div class="sb-logo-title">CIP · AIIB</div>
     <div class="sb-logo-sub">Connectivity Intelligence Platform</div>
+    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">
+      <span id="themeIcon">🌙</span> <span id="themeLabel">深色模式</span>
+    </button>
   </div>
   <div class="sb-section">Portfolio</div>
   <div class="sb-item active" onclick="nav('portfolio')" id="nav-portfolio"><span class="sb-dot"></span>投资组合总览</div>
@@ -167,57 +184,57 @@ hr.div{border:none;border-top:1px solid var(--border);margin:14px 0}
         <div class="label">区域覆盖地图（简化 SVG · 示意）</div>
         <div class="map-wrap">
           <svg viewBox="0 0 560 270" id="regionMap">
-            <rect width="560" height="270" fill="#111827"/>
+            <rect width="560" height="270" fill="var(--bg0)"/>
             <!-- Russia -->
-            <path d="M95 25 L430 18 L438 52 L310 52 L198 58 L88 52 Z" fill="#171F2E" stroke="#2A3650" stroke-width="0.5"/>
-            <text x="260" y="40" font-size="8" fill="#3A3A50" text-anchor="middle">俄罗斯（北方走廊，受限）</text>
+            <path d="M95 25 L430 18 L438 52 L310 52 L198 58 L88 52 Z" fill="var(--bg3)" stroke="var(--border)" stroke-width="0.5"/>
+            <text x="260" y="40" font-size="8" fill="var(--text3)" text-anchor="middle">俄罗斯（北方走廊，受限）</text>
             <!-- Europe west -->
-            <path d="M28 58 L82 48 L98 68 L88 98 L58 108 L28 88 Z" fill="#1C2840" stroke="#2A3650" stroke-width="0.5"/>
+            <path d="M28 58 L82 48 L98 68 L88 98 L58 108 L28 88 Z" fill="var(--bg3)" stroke="var(--border)" stroke-width="0.5"/>
             <!-- Turkey -->
-            <path d="M98 78 L158 68 L178 88 L168 108 L128 113 L98 98 Z" fill="#1C2840" stroke="#2A3650" stroke-width="0.5"/>
+            <path d="M98 78 L158 68 L178 88 L168 108 L128 113 L98 98 Z" fill="var(--bg3)" stroke="var(--border)" stroke-width="0.5"/>
             <!-- Caucasus (clickable) -->
-            <path d="M158 73 L208 66 L218 86 L198 96 L163 93 Z" fill="#1C2535" stroke="#344060" stroke-width="1" class="map-node" onclick="nav('region-ca')"/>
-            <text x="183" y="83" font-size="7.5" fill="#9A98A0" text-anchor="middle" pointer-events="none">高加索</text>
+            <path d="M158 73 L208 66 L218 86 L198 96 L163 93 Z" fill="var(--bg2)" stroke="var(--border2)" stroke-width="1" class="map-node" onclick="nav('region-ca')"/>
+            <text x="183" y="83" font-size="7.5" fill="var(--text2)" text-anchor="middle" pointer-events="none">高加索</text>
             <!-- Kazakhstan / Central Asia (clickable) -->
-            <path d="M198 63 L318 53 L338 78 L328 128 L288 138 L218 128 L193 108 Z" fill="#1C2535" stroke="#344060" stroke-width="1" class="map-node" onclick="nav('region-ca')"/>
-            <text x="263" y="96" font-size="9" fill="#9A98A0" text-anchor="middle" pointer-events="none">中亚 (KZ)</text>
+            <path d="M198 63 L318 53 L338 78 L328 128 L288 138 L218 128 L193 108 Z" fill="var(--bg2)" stroke="var(--border2)" stroke-width="1" class="map-node" onclick="nav('region-ca')"/>
+            <text x="263" y="96" font-size="9" fill="var(--text2)" text-anchor="middle" pointer-events="none">中亚 (KZ)</text>
             <!-- Caspian -->
-            <ellipse cx="216" cy="103" rx="9" ry="15" fill="#111827" stroke="#2A3650" stroke-width="0.5"/>
-            <text x="216" y="106" font-size="6" fill="#5C5C6A" text-anchor="middle">里海</text>
+            <ellipse cx="216" cy="103" rx="9" ry="15" fill="var(--bg0)" stroke="var(--border)" stroke-width="0.5"/>
+            <text x="216" y="106" font-size="6" fill="var(--text3)" text-anchor="middle">里海</text>
             <!-- China -->
-            <path d="M318 48 L428 43 L448 78 L438 128 L388 143 L328 133 L308 108 Z" fill="#1C2840" stroke="#2A3650" stroke-width="0.5"/>
-            <text x="383" y="93" font-size="9" fill="#5C5C6A" text-anchor="middle">中国</text>
+            <path d="M318 48 L428 43 L448 78 L438 128 L388 143 L328 133 L308 108 Z" fill="var(--bg3)" stroke="var(--border)" stroke-width="0.5"/>
+            <text x="383" y="93" font-size="9" fill="var(--text3)" text-anchor="middle">中国</text>
             <!-- South Asia (clickable) -->
-            <path d="M288 138 L368 143 L378 188 L318 198 L278 173 Z" fill="#1C2535" stroke="#344060" stroke-width="1" class="map-node" onclick="nav('region-sa')"/>
-            <text x="328" y="173" font-size="8.5" fill="#9A98A0" text-anchor="middle" pointer-events="none">南亚</text>
+            <path d="M288 138 L368 143 L378 188 L318 198 L278 173 Z" fill="var(--bg2)" stroke="var(--border2)" stroke-width="1" class="map-node" onclick="nav('region-sa')"/>
+            <text x="328" y="173" font-size="8.5" fill="var(--text2)" text-anchor="middle" pointer-events="none">南亚</text>
             <!-- SEA (clickable) -->
-            <path d="M388 143 L448 138 L458 198 L418 208 L388 188 Z" fill="#1C2535" stroke="#344060" stroke-width="1" class="map-node" onclick="nav('region-sea')"/>
-            <text x="423" y="180" font-size="8.5" fill="#9A98A0" text-anchor="middle" pointer-events="none">东南亚</text>
+            <path d="M388 143 L448 138 L458 198 L418 208 L388 188 Z" fill="var(--bg2)" stroke="var(--border2)" stroke-width="1" class="map-node" onclick="nav('region-sea')"/>
+            <text x="423" y="180" font-size="8.5" fill="var(--text2)" text-anchor="middle" pointer-events="none">东南亚</text>
             <!-- Middle East -->
-            <path d="M128 113 L198 110 L208 143 L168 153 L128 143 Z" fill="#1C2840" stroke="#2A3650" stroke-width="0.5"/>
+            <path d="M128 113 L198 110 L208 143 L168 153 L128 143 Z" fill="var(--bg3)" stroke="var(--border)" stroke-width="0.5"/>
             <!-- CORRIDOR: Middle Corridor -->
-            <path d="M448 90 L383 88 L338 80 L293 86 L216 93 L213 103 L193 86 L158 80 L123 86 L88 78" fill="none" stroke="#4A90D9" stroke-width="2" stroke-dasharray="6 3" opacity="0.9"/>
+            <path d="M448 90 L383 88 L338 80 L293 86 L216 93 L213 103 L193 86 L158 80 L123 86 L88 78" fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="6 3" opacity="0.9"/>
             <!-- KZ project node (pulsing) -->
-            <circle cx="293" cy="86" r="7" fill="#7B6FD4" stroke="#C0BAF0" stroke-width="1.5" class="map-node" onclick="nav('project-kz')" id="kzProjNode"/>
-            <text x="293" y="75" font-size="7.5" fill="#C0BAF0" text-anchor="middle" pointer-events="none">KZ项目</text>
+            <circle cx="293" cy="86" r="7" fill="var(--purple)" stroke="var(--purple)" stroke-width="1.5" class="map-node" onclick="nav('project-kz')" id="kzProjNode"/>
+            <text x="293" y="75" font-size="7.5" fill="var(--purple)" text-anchor="middle" pointer-events="none">KZ项目</text>
             <!-- other corridor nodes -->
-            <circle cx="448" cy="90" r="4" fill="#4A90D9" class="map-node" onclick="showTip(event,'中国边境','Dostyk / Altynkol 口岸')"/>
-            <circle cx="216" cy="93" r="4.5" fill="#E8A040" class="map-node" onclick="showTip(event,'里海跨海','Aktau/Kuryk 港口 · BC转移风险')"/>
-            <circle cx="158" cy="80" r="4" fill="#4A90D9" class="map-node" onclick="nav('country-az')"/>
-            <circle cx="123" cy="86" r="4" fill="#4A90D9" class="map-node" onclick="nav('country-ge')"/>
-            <circle cx="88" cy="78" r="3.5" fill="#4A90D9" class="map-node"/>
+            <circle cx="448" cy="90" r="4" fill="var(--accent)" class="map-node" onclick="showTip(event,'中国边境','Dostyk / Altynkol 口岸')"/>
+            <circle cx="216" cy="93" r="4.5" fill="var(--amber)" class="map-node" onclick="showTip(event,'里海跨海','Aktau/Kuryk 港口 · BC转移风险')"/>
+            <circle cx="158" cy="80" r="4" fill="var(--accent)" class="map-node" onclick="nav('country-az')"/>
+            <circle cx="123" cy="86" r="4" fill="var(--accent)" class="map-node" onclick="nav('country-ge')"/>
+            <circle cx="88" cy="78" r="3.5" fill="var(--accent)" class="map-node"/>
             <!-- CPEC illustrative -->
-            <path d="M338 86 L313 138 L298 198" fill="none" stroke="#E8A040" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.45"/>
-            <text x="330" y="150" font-size="6.5" fill="#E8A040" opacity="0.5">CPEC(示意)</text>
+            <path d="M338 86 L313 138 L298 198" fill="none" stroke="var(--amber)" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.45"/>
+            <text x="330" y="150" font-size="6.5" fill="var(--amber)" opacity="0.5">CPEC(示意)</text>
             <!-- Legend -->
-            <rect x="6" y="242" width="220" height="24" rx="3" fill="#111827" fill-opacity="0.92"/>
-            <line x1="12" y1="251" x2="28" y2="251" stroke="#4A90D9" stroke-width="2" stroke-dasharray="4 2"/>
-            <text x="32" y="254" font-size="7.5" fill="#9A98A0">中间走廊(TITR)</text>
-            <circle cx="105" cy="251" r="4" fill="#7B6FD4"/>
-            <text x="112" y="254" font-size="7.5" fill="#9A98A0">已诊断项目</text>
-            <circle cx="165" cy="251" r="4" fill="#E8A040"/>
-            <text x="172" y="254" font-size="7.5" fill="#9A98A0">BC转移风险</text>
-            <text x="6" y="264" font-size="6.5" fill="#5C5C6A">点击区域或节点可导航 · 地图为示意图，不代表精确地理边界</text>
+            <rect x="6" y="242" width="220" height="24" rx="3" fill="var(--bg1)" stroke="var(--border)" stroke-width="0.5"/>
+            <line x1="12" y1="251" x2="28" y2="251" stroke="var(--accent)" stroke-width="2" stroke-dasharray="4 2"/>
+            <text x="32" y="254" font-size="7.5" fill="var(--text2)">中间走廊(TITR)</text>
+            <circle cx="105" cy="251" r="4" fill="var(--purple)"/>
+            <text x="112" y="254" font-size="7.5" fill="var(--text2)">已诊断项目</text>
+            <circle cx="165" cy="251" r="4" fill="var(--amber)"/>
+            <text x="172" y="254" font-size="7.5" fill="var(--text2)">BC转移风险</text>
+            <text x="6" y="264" font-size="6.5" fill="var(--text3)">点击区域或节点可导航 · 地图为示意图，不代表精确地理边界</text>
           </svg>
           <div class="map-tooltip" id="mapTip"></div>
         </div>
@@ -319,11 +336,11 @@ hr.div{border:none;border-top:1px solid var(--border);margin:14px 0}
             <div style="font-size:11px;color:var(--text2);margin-top:3px">中国 → 哈萨克斯坦 → 里海 → 阿塞拜疆/格鲁吉亚 → 欧洲</div>
             <div style="font-size:10px;color:var(--text3);margin-top:4px">~520万吨/年(2025) · 18–23天端到端 <span class="ev ev-c">C</span></div>
           </div>
-          <div class="card" style="opacity:.65">
+          <div class="card" style="background:var(--bg2)">
             <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:13px;color:var(--text2)">北方走廊（俄罗斯）</span><span class="tag tag-gray">制裁受限</span></div>
             <div style="font-size:11px;color:var(--text3);margin-top:3px">2022年后因制裁大幅受限，流量转移至中间走廊 <span class="ev ev-e">E</span></div>
           </div>
-          <div class="card" style="opacity:.5">
+          <div class="card" style="background:var(--bg2)">
             <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:13px;color:var(--text3)">南方走廊（伊朗）</span><span class="tag tag-gray">Illustrative</span></div>
             <div style="font-size:11px;color:var(--text3);margin-top:3px">部分运营；制度和制裁障碍存在 <span class="ev ev-a">I</span></div>
           </div>
@@ -350,7 +367,7 @@ hr.div{border:none;border-top:1px solid var(--border);margin:14px 0}
         <canvas id="radarCanvas" width="220" height="205"></canvas>
         <div style="text-align:center;margin-top:8px;padding:8px;background:var(--purple-bg);border-radius:var(--r6)">
           <div style="font-size:10px;color:var(--purple);font-weight:600;text-transform:uppercase;letter-spacing:.05em">Overall Effective Connectivity Readiness</div>
-          <div style="font-size:24px;font-weight:600;color:#C0BAF0">56</div>
+          <div style="font-size:24px;font-weight:600;color:var(--purple)">56</div>
           <div style="font-size:10px;color:var(--purple)">/ 100 · ex-ante · AI-generated diagnosis</div>
         </div>
         <div style="font-size:10px;color:var(--text3);margin-top:5px">总分仅作概览参考，不替代 Binding Constraint 判断</div>
@@ -420,7 +437,7 @@ hr.div{border:none;border-top:1px solid var(--border);margin:14px 0}
         <div class="score-row"><span class="score-name">Resilience</span><div class="bar-bg"><div class="bar-fill" style="width:55%;background:#E8A040"></div></div><span class="score-num" style="color:var(--amber)">55</span></div>
         <div style="text-align:center;margin-top:10px;padding:8px;background:var(--purple-bg);border-radius:var(--r6)">
           <div style="font-size:10px;color:var(--purple);font-weight:600">Overall Score <span class="ev ev-a">Illustrative</span></div>
-          <div style="font-size:22px;font-weight:600;color:#C0BAF0">67</div>
+          <div style="font-size:22px;font-weight:600;color:var(--purple)">67</div>
         </div>
       </div>
       <div>
@@ -449,7 +466,7 @@ hr.div{border:none;border-top:1px solid var(--border);margin:14px 0}
         <div class="score-row"><span class="score-name">Efficiency</span><div class="bar-bg"><div class="bar-fill" style="width:60%;background:#E8A040"></div></div><span class="score-num" style="color:var(--amber)">60</span></div>
         <div class="score-row"><span class="score-name">Coordination</span><div class="bar-bg"><div class="bar-fill" style="width:54%;background:#E8A040"></div></div><span class="score-num" style="color:var(--amber)">54</span></div>
         <div class="score-row"><span class="score-name">Resilience</span><div class="bar-bg"><div class="bar-fill" style="width:46%;background:#E8A040"></div></div><span class="score-num" style="color:var(--amber)">46</span></div>
-        <div style="text-align:center;margin-top:10px;padding:8px;background:var(--purple-bg);border-radius:var(--r6)"><div style="font-size:10px;color:var(--purple);font-weight:600">Overall Score <span class="ev ev-a">Illustrative</span></div><div style="font-size:22px;font-weight:600;color:#C0BAF0">61</div></div>
+        <div style="text-align:center;margin-top:10px;padding:8px;background:var(--purple-bg);border-radius:var(--r6)"><div style="font-size:10px;color:var(--purple);font-weight:600">Overall Score <span class="ev ev-a">Illustrative</span></div><div style="font-size:22px;font-weight:600;color:var(--purple)">61</div></div>
       </div>
       <div>
         <div class="bc-box" style="margin-bottom:10px"><div class="bc-lbl">Binding Constraint <span class="ev ev-a">Illustrative</span></div><div class="bc-val">Coordination Failure</div><div style="font-size:11px;color:var(--purple);margin-top:3px">数字海关系统互通不足</div></div>
@@ -495,34 +512,34 @@ hr.div{border:none;border-top:1px solid var(--border);margin:14px 0}
     <div class="label" style="margin-bottom:8px">走廊节点状态（简化线图）</div>
     <div class="map-wrap" style="margin-bottom:14px;padding:16px 10px">
       <svg viewBox="0 0 540 88">
-        <line x1="28" y1="44" x2="512" y2="44" stroke="#2A3650" stroke-width="2"/>
+        <line x1="28" y1="44" x2="512" y2="44" stroke="var(--border2)" stroke-width="2"/>
         <line x1="178" y1="44" x2="290" y2="44" stroke="#D95555" stroke-width="3" stroke-dasharray="5 2"/>
-        <text x="28" y="27" font-size="7.5" fill="#5C5C6A" text-anchor="middle">中国边境</text>
-        <text x="118" y="27" font-size="7.5" fill="#9A98A0" text-anchor="middle">Dostyk</text>
+        <text x="28" y="27" font-size="7.5" fill="var(--text2)" text-anchor="middle">中国边境</text>
+        <text x="118" y="27" font-size="7.5" fill="var(--text2)" text-anchor="middle">Dostyk</text>
         <text x="234" y="27" font-size="8.5" fill="#D95555" text-anchor="middle" font-weight="600">⚠ Mointy瓶颈 (KZ BC)</text>
         <text x="328" y="27" font-size="7.5" fill="#E8A040" text-anchor="middle">里海跨海</text>
         <text x="328" y="18" font-size="6.5" fill="#E8A040" text-anchor="middle">BC转移风险</text>
-        <text x="402" y="27" font-size="7.5" fill="#9A98A0" text-anchor="middle">Baku(AZ)</text>
-        <text x="462" y="27" font-size="7.5" fill="#9A98A0" text-anchor="middle">Tbilisi(GE)</text>
-        <text x="512" y="27" font-size="7.5" fill="#9A98A0" text-anchor="middle">欧洲</text>
-        <circle cx="28" cy="44" r="4.5" fill="#1C2535" stroke="#4A90D9" stroke-width="1.5"/>
-        <circle cx="118" cy="44" r="4.5" fill="#1C2535" stroke="#4A90D9" stroke-width="1.5"/>
-        <circle cx="178" cy="44" r="4.5" fill="#1C2535" stroke="#D95555" stroke-width="1.5"/>
+        <text x="402" y="27" font-size="7.5" fill="var(--text2)" text-anchor="middle">Baku(AZ)</text>
+        <text x="462" y="27" font-size="7.5" fill="var(--text2)" text-anchor="middle">Tbilisi(GE)</text>
+        <text x="512" y="27" font-size="7.5" fill="var(--text2)" text-anchor="middle">欧洲</text>
+        <circle cx="28" cy="44" r="4.5" fill="var(--bg1)" stroke="#4A90D9" stroke-width="1.5"/>
+        <circle cx="118" cy="44" r="4.5" fill="var(--bg1)" stroke="#4A90D9" stroke-width="1.5"/>
+        <circle cx="178" cy="44" r="4.5" fill="var(--bg1)" stroke="#D95555" stroke-width="1.5"/>
         <circle cx="234" cy="44" r="7" fill="#D95555" stroke="#FF8080" stroke-width="1.5" class="map-node" onclick="nav('project-kz')"/>
         <text x="234" y="70" font-size="6.5" fill="#D95555" text-anchor="middle">→ 点击查看项目诊断</text>
-        <circle cx="290" cy="44" r="4.5" fill="#1C2535" stroke="#D95555" stroke-width="1.5"/>
-        <circle cx="328" cy="44" r="6" fill="#1C2535" stroke="#E8A040" stroke-width="1.5"/>
+        <circle cx="290" cy="44" r="4.5" fill="var(--bg1)" stroke="#D95555" stroke-width="1.5"/>
+        <circle cx="328" cy="44" r="6" fill="var(--bg1)" stroke="#E8A040" stroke-width="1.5"/>
         <text x="328" y="70" font-size="6.5" fill="#E8A040" text-anchor="middle">Aktau/Kuryk</text>
-        <circle cx="402" cy="44" r="4.5" fill="#1C2535" stroke="#4A90D9" stroke-width="1.5" class="map-node" onclick="nav('country-az')"/>
-        <circle cx="462" cy="44" r="4.5" fill="#1C2535" stroke="#4A90D9" stroke-width="1.5" class="map-node" onclick="nav('country-ge')"/>
-        <circle cx="512" cy="44" r="3.5" fill="#1C2535" stroke="#2DA878" stroke-width="1.5"/>
-        <rect x="2" y="78" width="220" height="10" rx="2" fill="#111827" fill-opacity="0.9"/>
+        <circle cx="402" cy="44" r="4.5" fill="var(--bg1)" stroke="#4A90D9" stroke-width="1.5" class="map-node" onclick="nav('country-az')"/>
+        <circle cx="462" cy="44" r="4.5" fill="var(--bg1)" stroke="#4A90D9" stroke-width="1.5" class="map-node" onclick="nav('country-ge')"/>
+        <circle cx="512" cy="44" r="3.5" fill="var(--bg1)" stroke="#2DA878" stroke-width="1.5"/>
+        <rect x="2" y="78" width="220" height="10" rx="2" fill="var(--bg3)"/>
         <line x1="6" y1="83" x2="18" y2="83" stroke="#D95555" stroke-width="2" stroke-dasharray="3 2"/>
-        <text x="22" y="86" font-size="6.5" fill="#9A98A0">当前瓶颈段</text>
+        <text x="22" y="86" font-size="6.5" fill="var(--text2)">当前瓶颈段</text>
         <circle cx="68" cy="83" r="3" fill="#E8A040"/>
-        <text x="74" y="86" font-size="6.5" fill="#9A98A0">BC转移风险</text>
+        <text x="74" y="86" font-size="6.5" fill="var(--text2)">BC转移风险</text>
         <circle cx="118" cy="83" r="3" fill="#4A90D9"/>
-        <text x="124" y="86" font-size="6.5" fill="#9A98A0">正常节点(可点击)</text>
+        <text x="124" y="86" font-size="6.5" fill="var(--text2)">正常节点(可点击)</text>
       </svg>
     </div>
     <div class="label">走廊失效因果链</div>
@@ -581,7 +598,7 @@ hr.div{border:none;border-top:1px solid var(--border);margin:14px 0}
     <div class="page-sub">AIIB P001038 · Transforming Rail Connectivity – Middle Corridor Phase I · 批准：2026年3月</div>
     <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px">
       <span class="tag tag-blue">AIIB担保 USD 5.64亿</span>
-      <span class="tag" style="background:#1A2030;color:#7A8090">世行联合担保 USD 8.46亿</span>
+      <span class="tag tag-gray">世行联合担保 USD 8.46亿</span>
       <span class="tag tag-amber">322 km 绿地铁路新线</span>
       <span class="tag tag-purple">Trans-Caspian 中间走廊</span>
     </div>
@@ -606,7 +623,7 @@ hr.div{border:none;border-top:1px solid var(--border);margin:14px 0}
           <canvas id="projRadar" width="220" height="205"></canvas>
           <div style="text-align:center;margin-top:8px;padding:8px;background:var(--purple-bg);border-radius:var(--r6)">
             <div style="font-size:10px;color:var(--purple);font-weight:600;text-transform:uppercase;letter-spacing:.04em">Overall Effective Connectivity Readiness</div>
-            <div style="font-size:26px;font-weight:600;color:#C0BAF0">56</div>
+            <div style="font-size:26px;font-weight:600;color:var(--purple)">56</div>
             <div style="font-size:10px;color:var(--purple)">/ 100 · ex-ante · AI-generated diagnosis</div>
           </div>
           <div style="font-size:10px;color:var(--text3);margin-top:5px">总分仅作概览参考，不替代 Binding Constraint 判断</div>
@@ -731,7 +748,7 @@ hr.div{border:none;border-top:1px solid var(--border);margin:14px 0}
       <div class="chain" style="margin-bottom:12px">
         <span class="chain-item" style="background:var(--purple-bg);color:var(--purple)">AIIB/世行担保</span><span class="chain-arr">→</span>
         <span class="chain-item" style="background:var(--purple-bg);color:var(--purple)">商业融资动员</span><span class="chain-arr">→</span>
-        <span class="chain-item" style="background:#0D1F35;color:var(--accent)">322km新线建设</span><span class="chain-arr">→</span>
+        <span class="chain-item" style="background:var(--blue-bg);color:var(--accent)">322km新线建设</span><span class="chain-arr">→</span>
         <span class="chain-item" style="background:var(--amber-bg);color:var(--amber)">Mointy瓶颈消除</span><span class="chain-arr">→</span>
         <span class="chain-item" style="background:var(--teal-bg);color:var(--teal)">容量释放</span><span class="chain-arr">→</span>
         <span class="chain-item" style="background:var(--green-bg);color:var(--green)">被压制需求响应</span>
@@ -801,6 +818,10 @@ function initRadar(canvasId) {
   var canvas = document.getElementById(canvasId);
   if (!canvas) return;
   if (chartInstances[canvasId]) { chartInstances[canvasId].destroy(); }
+  var isLight = document.documentElement.getAttribute('data-theme') === 'light';
+  var gridColor = isLight ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.07)';
+  var labelColor = isLight ? '#6B6E79' : '#9A98A0';
+  var pointBorder = isLight ? '#FFFFFF' : '#0E1117';
   chartInstances[canvasId] = new Chart(canvas, {
     type: 'radar',
     data: {
@@ -812,7 +833,7 @@ function initRadar(canvasId) {
         borderColor: '#7B6FD4',
         borderWidth: 2,
         pointBackgroundColor: '#7B6FD4',
-        pointBorderColor: '#0E1117',
+        pointBorderColor: pointBorder,
         pointBorderWidth: 2,
         pointRadius: 4
       }]
@@ -827,9 +848,9 @@ function initRadar(canvasId) {
         r: {
           min: 0, max: 100,
           ticks: { stepSize: 25, display: false },
-          grid: { color: 'rgba(255,255,255,0.07)' },
-          angleLines: { color: 'rgba(255,255,255,0.07)' },
-          pointLabels: { font: { size: 10 }, color: '#9A98A0' }
+          grid: { color: gridColor },
+          angleLines: { color: gridColor },
+          pointLabels: { font: { size: 10 }, color: labelColor }
         }
       }
     }
@@ -847,7 +868,29 @@ function showTip(e, title, sub) {
   setTimeout(function(){ tip.style.display = 'none'; }, 2200);
 }
 
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  var icon = document.getElementById('themeIcon');
+  var label = document.getElementById('themeLabel');
+  if (theme === 'light') {
+    icon.textContent = '☀️';
+    label.textContent = '浅色模式';
+  } else {
+    icon.textContent = '🌙';
+    label.textContent = '深色模式';
+  }
+  Object.keys(chartInstances).forEach(function(id){ initRadar(id); });
+}
+
+function toggleTheme() {
+  var current = document.documentElement.getAttribute('data-theme') || 'dark';
+  var next = current === 'dark' ? 'light' : 'dark';
+  applyTheme(next);
+  localStorage.setItem('cip-theme', next);
+}
+
 // Init on load
+applyTheme(localStorage.getItem('cip-theme') || 'dark');
 nav('portfolio');
 </script>
 </body>
