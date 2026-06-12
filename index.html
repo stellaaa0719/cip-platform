@@ -156,8 +156,11 @@ hr.div{border:none;border-top:1px solid var(--border);margin:14px 0}
   <div class="sb-section">Corridor</div>
   <div class="sb-item sb-indent" onclick="nav('corridor-mc')" id="nav-corridor-mc"><span class="sb-dot"></span>中间走廊 (TITR)</div>
   <div class="sb-item sb-indent" onclick="nav('corridor-cpec')" id="nav-corridor-cpec"><span class="sb-dot"></span>CPEC走廊<span class="sb-badge">Illus.</span></div>
-  <div class="sb-section">Project</div>
-  <div class="sb-item sb-indent" onclick="nav('project-kz')" id="nav-project-kz"><span class="sb-dot"></span>KZ铁路走廊扩容</div>
+  <div class="sb-section">Project · 哈萨克斯坦</div>
+  <div class="sb-item sb-indent" onclick="nav('project-kz')" id="nav-project-kz"><span class="sb-dot"></span>P001038 铁路走廊扩容</div>
+  <div class="sb-item sb-indent" onclick="nav('project-kz-road')" id="nav-project-kz-road"><span class="sb-dot"></span>P000914 公路韧性提升</div>
+  <div class="sb-item sb-indent" onclick="nav('project-kz-almaty')" id="nav-project-kz-almaty"><span class="sb-dot"></span>P000870 Almaty铁路绕城</div>
+  <div class="sb-item sb-indent" onclick="nav('project-kz-others')" id="nav-project-kz-others"><span class="sb-dot"></span>其余9个项目<span class="sb-badge">KZ</span></div>
   <div class="sb-footer">
     <strong>⚠ 数据说明</strong>
     除哈萨克斯坦项目诊断外，其余数据为示意性数据（Illustrative / Estimated），仅用于展示平台分析逻辑，不代表正式评估结果。
@@ -324,7 +327,7 @@ hr.div{border:none;border-top:1px solid var(--border);margin:14px 0}
             <div style="display:flex;justify-content:space-between;margin-bottom:4px"><span style="font-size:12px;color:var(--text2);cursor:pointer" onclick="nav('country-az')">阿塞拜疆 → <span class="ev ev-a" style="font-size:8px">Illus.</span></span><span style="font-size:11px;color:var(--amber)">61</span></div>
             <div class="score-row" style="margin:0"><span class="score-name" style="width:90px;font-size:10px">Access</span><div class="bar-bg"><div class="bar-fill" style="width:70%;background:#2DA878"></div></div><span class="score-num" style="font-size:10px;color:var(--green)">70</span></div>
             <div class="score-row" style="margin:0"><span class="score-name" style="width:90px;font-size:10px">Coordination</span><div class="bar-bg"><div class="bar-fill" style="width:54%;background:#E8A040"></div></div><span class="score-num" style="font-size:10px;color:var(--amber)">54</span></div>
-            <div class="score-row" style="margin:0"><span class="score-name" style="width:90px;font-size:10px">Resilience</span><div class="bar-bg"><div class="bar-fill" style="width:46%;background:#E8A040"></div></div><span class="score-num" style="font-size:10px;color:var(--amber)">46</span></div>
+            <div style="font-size:10px;color:var(--teal);margin:1px 0 0 0">&#8627; Resilience: Baku枢纽单点依赖；制度韧性待建 <span class="ev ev-a">I</span></div>
           </div>
         </div>
       </div>
@@ -334,7 +337,7 @@ hr.div{border:none;border-top:1px solid var(--border);margin:14px 0}
           <div class="card" style="cursor:pointer;border-color:var(--purple)" onclick="nav('corridor-mc')">
             <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:13px;font-weight:500;color:var(--text1)">中间走廊 (TITR) →</span><span class="tag tag-red">BC: Efficiency</span></div>
             <div style="font-size:11px;color:var(--text2);margin-top:3px">中国 → 哈萨克斯坦 → 里海 → 阿塞拜疆/格鲁吉亚 → 欧洲</div>
-            <div style="font-size:10px;color:var(--text3);margin-top:4px">~520万吨/年(2025) · 18–23天端到端 <span class="ev ev-c">C</span></div>
+            <div style="font-size:10px;color:var(--text3);margin-top:4px">2024年4.5M吨（+63% YoY）/年(2025) · 18–23天端到端 <span class="ev ev-c">C</span></div>
           </div>
           <div class="card" style="background:var(--bg2)">
             <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:13px;color:var(--text2)">北方走廊（俄罗斯）</span><span class="tag tag-gray">制裁受限</span></div>
@@ -373,18 +376,22 @@ hr.div{border:none;border-top:1px solid var(--border);margin:14px 0}
         <div style="font-size:10px;color:var(--text3);margin-top:5px">总分仅作概览参考，不替代 Binding Constraint 判断</div>
       </div>
       <div>
-        <div class="label">分维度评分</div>
+        <div class="label">分维度评分（含各维度韧性子属性）</div>
         <div class="card" style="margin-bottom:10px">
           <div class="score-row"><span class="score-name">Access</span><div class="bar-bg"><div class="bar-fill" style="width:76%;background:#2DA878"></div></div><span class="score-num" style="color:var(--green)">76</span><span style="margin-left:6px"><span class="ev ev-c">Confirmed</span></span></div>
-          <div style="font-size:10px;color:var(--text3);margin:-2px 0 5px 118px">主干通道已连通；非接入缺失</div>
+          <div style="font-size:10px;color:var(--text3);margin:-2px 0 1px 118px">主干通道已连通；Dostyk/Altynkol–Aktau/Kuryk贯通</div>
+          <div style="font-size:10px;color:var(--teal);margin:0 0 6px 118px">&#8627; Resilience: 替代路线有限，单一走廊高度依赖 <span class="ev ev-a">A</span></div>
           <div class="score-row"><span class="score-name">Utilization</span><div class="bar-bg"><div class="bar-fill" style="width:68%;background:#4A90D9"></div></div><span class="score-num" style="color:var(--accent)">68</span><span style="margin-left:6px"><span class="ev ev-c">Confirmed</span></span></div>
-          <div style="font-size:10px;color:var(--text3);margin:-2px 0 5px 118px">需求激增+7倍（2021→2025）；供给压制需求</div>
+          <div style="font-size:10px;color:var(--text3);margin:-2px 0 1px 118px">2024年TITR货运量4.5M吨（+63%）；供给压制更大需求</div>
+          <div style="font-size:10px;color:var(--teal);margin:0 0 6px 118px">&#8627; Resilience: 需求依赖北方走廊制裁驱动，存在回流风险 <span class="ev ev-a">A</span></div>
           <div class="score-row"><span class="score-name">Efficiency</span><div class="bar-bg"><div class="bar-fill" style="width:32%;background:#D95555"></div></div><span class="score-num" style="color:var(--red)">32</span><span style="margin-left:6px"><span class="ev ev-c">Confirmed</span></span></div>
-          <div style="font-size:10px;color:var(--text3);margin:-2px 0 5px 118px">Mointy拥堵；绕行+149km；端到端18–23天</div>
+          <div style="font-size:10px;color:var(--text3);margin:-2px 0 1px 118px">Mointy节点拥堵；绕行+149km；端到端18–23天</div>
+          <div style="font-size:10px;color:var(--teal);margin:0 0 6px 118px">&#8627; Resilience: 单节点瓶颈，无备用调度，冲击传导快 <span class="ev ev-a">A</span></div>
           <div class="score-row"><span class="score-name">Coordination</span><div class="bar-bg"><div class="bar-fill" style="width:52%;background:#E8A040"></div></div><span class="score-num" style="color:var(--amber)">52</span><span style="margin-left:6px"><span class="ev ev-e">Estimated</span></span></div>
-          <div style="font-size:10px;color:var(--text3);margin:-2px 0 5px 118px">TITR机制2024年启动；KTZ关税改革进行中</div>
-          <div class="score-row"><span class="score-name">Resilience</span><div class="bar-bg"><div class="bar-fill" style="width:44%;background:#3AB5A0"></div></div><span class="score-num" style="color:var(--teal)">44</span><span style="margin-left:6px"><span class="ev ev-a">Assumption</span></span></div>
-          <div style="font-size:10px;color:var(--text3);margin:-2px 0 5px 118px">需求依赖地缘政治驱动；北方走廊替代风险</div>
+          <div style="font-size:10px;color:var(--text3);margin:-2px 0 1px 118px">TITR协调中心2024年6月启动；KTZ关税改革进行中</div>
+          <div style="font-size:10px;color:var(--teal);margin:0 0 4px 118px">&#8627; Resilience: TITR机制尚脆弱，危机协调能力未检验 <span class="ev ev-e">E</span></div>
+          <hr class="div" style="margin:8px 0">
+          <div style="font-size:10px;color:var(--text3)"><span class="ev ev-c">C</span> 直接数据 &nbsp;<span class="ev ev-e">E</span> 推断 &nbsp;<span class="ev ev-a">A</span> 假设 &nbsp;<span style="color:var(--teal)">&#8627;</span> 各维度韧性子属性</div>
         </div>
         <div class="bc-box">
           <div class="bc-lbl">Binding Constraint · ex-ante AI diagnosis</div>
@@ -397,9 +404,9 @@ hr.div{border:none;border-top:1px solid var(--border);margin:14px 0}
     <div class="card" style="margin-bottom:14px">
       <div class="mrow"><span class="mrow-name">KTZ铁路网络总里程</span><span class="mrow-val">~16,000 km</span><span class="mrow-note"><span class="ev ev-c">Confirmed</span> KTZ年报</span></div>
       <div class="mrow"><span class="mrow-name">中间走廊货运量（2021）</span><span class="mrow-val">~70万吨</span><span class="mrow-note"><span class="ev ev-c">Confirmed</span> WB 2023</span></div>
-      <div class="mrow"><span class="mrow-name">中间走廊货运量（2025估计）</span><span class="mrow-val">~520万吨</span><span class="mrow-note"><span class="ev ev-e">Estimated</span> OECD/WB</span></div>
+      <div class="mrow"><span class="mrow-name">中间走廊货运量（2025估计）</span><span class="mrow-val">2024年4.5M吨（+63% YoY）</span><span class="mrow-note"><span class="ev ev-e">Estimated</span> OECD/WB</span></div>
       <div class="mrow"><span class="mrow-name">端到端运输时间（中→欧）</span><span class="mrow-val">18–23天</span><span class="mrow-note"><span class="ev ev-c">Confirmed</span> 项目文件</span></div>
-      <div class="mrow"><span class="mrow-name">World Bank LPI 排名（2023）</span><span class="mrow-val">第79位</span><span class="mrow-note"><span class="ev ev-c">Confirmed</span> WB LPI 2023</span></div>
+      <div class="mrow"><span class="mrow-name">World Bank LPI 排名（2023）</span><span class="mrow-val">第95位 / 2.7分</span><span class="mrow-note"><span class="ev ev-c">Confirmed</span> WB LPI 2023</span></div>
     </div>
     <div class="label">本国 AIIB 连通性项目</div>
     <table class="tbl">
@@ -434,7 +441,7 @@ hr.div{border:none;border-top:1px solid var(--border);margin:14px 0}
         <div class="score-row"><span class="score-name">Utilization</span><div class="bar-bg"><div class="bar-fill" style="width:64%;background:#4A90D9"></div></div><span class="score-num" style="color:var(--accent)">64</span></div>
         <div class="score-row"><span class="score-name">Efficiency</span><div class="bar-bg"><div class="bar-fill" style="width:58%;background:#E8A040"></div></div><span class="score-num" style="color:var(--amber)">58</span></div>
         <div class="score-row"><span class="score-name">Coordination</span><div class="bar-bg"><div class="bar-fill" style="width:62%;background:#2DA878"></div></div><span class="score-num" style="color:var(--green)">62</span></div>
-        <div class="score-row"><span class="score-name">Resilience</span><div class="bar-bg"><div class="bar-fill" style="width:55%;background:#E8A040"></div></div><span class="score-num" style="color:var(--amber)">55</span></div>
+        <div style="font-size:10px;color:var(--teal);margin:2px 0 6px 0">&#8627; Resilience: TITR机制建设初期，Poti/Batumi港口扩容需求待响应 <span class="ev ev-a">I</span></div>
         <div style="text-align:center;margin-top:10px;padding:8px;background:var(--purple-bg);border-radius:var(--r6)">
           <div style="font-size:10px;color:var(--purple);font-weight:600">Overall Score <span class="ev ev-a">Illustrative</span></div>
           <div style="font-size:22px;font-weight:600;color:var(--purple)">67</div>
@@ -465,7 +472,7 @@ hr.div{border:none;border-top:1px solid var(--border);margin:14px 0}
         <div class="score-row"><span class="score-name">Utilization</span><div class="bar-bg"><div class="bar-fill" style="width:65%;background:#4A90D9"></div></div><span class="score-num" style="color:var(--accent)">65</span></div>
         <div class="score-row"><span class="score-name">Efficiency</span><div class="bar-bg"><div class="bar-fill" style="width:60%;background:#E8A040"></div></div><span class="score-num" style="color:var(--amber)">60</span></div>
         <div class="score-row"><span class="score-name">Coordination</span><div class="bar-bg"><div class="bar-fill" style="width:54%;background:#E8A040"></div></div><span class="score-num" style="color:var(--amber)">54</span></div>
-        <div class="score-row"><span class="score-name">Resilience</span><div class="bar-bg"><div class="bar-fill" style="width:46%;background:#E8A040"></div></div><span class="score-num" style="color:var(--amber)">46</span></div>
+        <div style="font-size:10px;color:var(--teal);margin:2px 0 6px 0">&#8627; Resilience: Baku枢纽单点依赖；跨境数字协调机制尚脆弱 <span class="ev ev-a">I</span></div>
         <div style="text-align:center;margin-top:10px;padding:8px;background:var(--purple-bg);border-radius:var(--r6)"><div style="font-size:10px;color:var(--purple);font-weight:600">Overall Score <span class="ev ev-a">Illustrative</span></div><div style="font-size:22px;font-weight:600;color:var(--purple)">61</div></div>
       </div>
       <div>
@@ -504,7 +511,7 @@ hr.div{border:none;border-top:1px solid var(--border);margin:14px 0}
   <div class="page-body">
     <div class="data-disclaimer">⚠ 走廊货运数据基于 World Bank / OECD 公开报告（<span class="ev ev-e">Estimated</span>）；节点诊断含 AI-generated 判断，标注于各项。</div>
     <div class="g4" style="margin-bottom:16px">
-      <div class="card kpi"><div class="kpi-val" style="color:var(--amber);font-size:18px">~520万吨</div><div class="kpi-label">年货运量（2025估计）</div><div class="kpi-sub"><span class="ev ev-e">Estimated</span></div></div>
+      <div class="card kpi"><div class="kpi-val" style="color:var(--amber);font-size:18px">2024年4.5M吨（+63% YoY）</div><div class="kpi-label">年货运量（2025估计）</div><div class="kpi-sub"><span class="ev ev-e">Estimated</span></div></div>
       <div class="card kpi"><div class="kpi-val">18–23天</div><div class="kpi-label">端到端运输时间</div><div class="kpi-sub"><span class="ev ev-c">Confirmed</span></div></div>
       <div class="card kpi"><div class="kpi-val" style="color:var(--green);font-size:18px">≥1,100万吨</div><div class="kpi-label">2030年容量目标</div><div class="kpi-sub"><span class="ev ev-e">WB 2023</span></div></div>
       <div class="card kpi"><div class="kpi-val" style="color:var(--red)">Efficiency</div><div class="kpi-label">走廊主要 BC</div><div class="kpi-sub"><span class="ev ev-c">Confirmed (KZ段)</span></div></div>
@@ -610,7 +617,7 @@ hr.div{border:none;border-top:1px solid var(--border);margin:14px 0}
     <div class="tab-row">
       <button class="tab-btn active" onclick="switchProjTab(event,'pov')">⓪ 诊断总览</button>
       <button class="tab-btn" onclick="switchProjTab(event,'psys')">① 系统状态</button>
-      <button class="tab-btn" onclick="switchProjTab(event,'pbc')">② Binding Constraint</button>
+      <button class="tab-btn" onclick="switchProjTab(event,'pbc')">② 约束识别</button>
       <button class="tab-btn" onclick="switchProjTab(event,'pint')">③ 干预逻辑</button>
       <button class="tab-btn" onclick="switchProjTab(event,'pbeh')">④ 行为响应</button>
     </div>
@@ -632,17 +639,19 @@ hr.div{border:none;border-top:1px solid var(--border);margin:14px 0}
           <div class="label">分维度评分与证据等级</div>
           <div class="card" style="margin-bottom:10px">
             <div class="score-row"><span class="score-name" style="width:100px">Access</span><div class="bar-bg"><div class="bar-fill" style="width:76%;background:#2DA878"></div></div><span class="score-num" style="color:var(--green)">76</span><span style="margin-left:6px"><span class="ev ev-c">Confirmed</span></span></div>
-            <div style="font-size:10px;color:var(--text3);margin:-2px 0 5px 108px">主干通道已连通；非接入缺失</div>
+            <div style="font-size:10px;color:var(--text3);margin:-2px 0 1px 108px">主干通道已连通；Dostyk/Altynkol–Aktau/Kuryk贯通</div>
+            <div style="font-size:10px;color:var(--teal);margin:0 0 6px 108px">&#8627; Resilience: 替代路线有限，单一走廊高度依赖 <span class="ev ev-a">A</span></div>
             <div class="score-row"><span class="score-name" style="width:100px">Utilization</span><div class="bar-bg"><div class="bar-fill" style="width:68%;background:#4A90D9"></div></div><span class="score-num" style="color:var(--accent)">68</span><span style="margin-left:6px"><span class="ev ev-c">Confirmed</span></span></div>
-            <div style="font-size:10px;color:var(--text3);margin:-2px 0 5px 108px">需求激增+7倍；供给瓶颈压制更大需求</div>
+            <div style="font-size:10px;color:var(--text3);margin:-2px 0 1px 108px">2024年TITR货运量4.5M吨（+63%）；供给压制更大需求</div>
+            <div style="font-size:10px;color:var(--teal);margin:0 0 6px 108px">&#8627; Resilience: 需求依赖北方走廊制裁驱动，存在回流风险 <span class="ev ev-a">A</span></div>
             <div class="score-row"><span class="score-name" style="width:100px">Efficiency</span><div class="bar-bg"><div class="bar-fill" style="width:32%;background:#D95555"></div></div><span class="score-num" style="color:var(--red)">32</span><span style="margin-left:6px"><span class="ev ev-c">Confirmed</span></span></div>
-            <div style="font-size:10px;color:var(--text3);margin:-2px 0 5px 108px">Mointy拥堵；绕行+149km；端到端18–23天</div>
+            <div style="font-size:10px;color:var(--text3);margin:-2px 0 1px 108px">Mointy节点拥堵；绕行+149km；端到端18–23天</div>
+            <div style="font-size:10px;color:var(--teal);margin:0 0 6px 108px">&#8627; Resilience: 单节点瓶颈，无备用调度，冲击传导快 <span class="ev ev-a">A</span></div>
             <div class="score-row"><span class="score-name" style="width:100px">Coordination</span><div class="bar-bg"><div class="bar-fill" style="width:52%;background:#E8A040"></div></div><span class="score-num" style="color:var(--amber)">52</span><span style="margin-left:6px"><span class="ev ev-e">Estimated</span></span></div>
-            <div style="font-size:10px;color:var(--text3);margin:-2px 0 5px 108px">TITR机制2024年启动；KTZ关税改革进行中</div>
-            <div class="score-row"><span class="score-name" style="width:100px">Resilience</span><div class="bar-bg"><div class="bar-fill" style="width:44%;background:#3AB5A0"></div></div><span class="score-num" style="color:var(--teal)">44</span><span style="margin-left:6px"><span class="ev ev-a">Assumption</span></span></div>
-            <div style="font-size:10px;color:var(--text3);margin:-2px 0 5px 108px">需求依赖地缘政治驱动；北方走廊替代风险</div>
+            <div style="font-size:10px;color:var(--text3);margin:-2px 0 1px 108px">TITR协调中心2024年6月启动；KTZ关税改革进行中</div>
+            <div style="font-size:10px;color:var(--teal);margin:0 0 4px 108px">&#8627; Resilience: TITR机制尚脆弱，危机协调能力未检验 <span class="ev ev-e">E</span></div>
             <hr class="div" style="margin:8px 0">
-            <div style="font-size:10px;color:var(--text3)"><span class="ev ev-c">Confirmed</span> 直接数据 &nbsp;<span class="ev ev-e">Estimated</span> 第三方推断 &nbsp;<span class="ev ev-a">Assumption</span> 情境假设 &nbsp;<span class="ev ev-t">To verify</span> 待核实</div>
+            <div style="font-size:10px;color:var(--text3)"><span class="ev ev-c">C</span> 直接数据 &nbsp;<span class="ev ev-e">E</span> 推断 &nbsp;<span class="ev ev-a">A</span> 假设 &nbsp;<span style="color:var(--teal)">&#8627;</span> 各维度韧性子属性</div>
           </div>
           <div class="bc-box" style="margin-bottom:10px">
             <div class="bc-lbl">Binding Constraint · ex-ante AI diagnosis</div>
@@ -659,7 +668,7 @@ hr.div{border:none;border-top:1px solid var(--border);margin:14px 0}
       <hr class="div">
       <div class="label">项目影响路径</div>
       <div class="sc-grid" style="margin-bottom:0">
-        <div class="sc-col"><div class="sc-head" style="background:var(--bg3);color:var(--text2)">Before（项目前）</div><div class="sc-body"><strong>Mointy节点拥堵</strong><br>绕行+149km<br>端到端18–23天<br>货运量~520万吨<br>有效需求被压制</div></div>
+        <div class="sc-col"><div class="sc-head" style="background:var(--bg3);color:var(--text2)">Before（项目前）</div><div class="sc-body"><strong>Mointy节点拥堵</strong><br>绕行+149km<br>端到端18–23天<br>货运量2024年4.5M吨（+63% YoY）<br>有效需求被压制</div></div>
         <div class="sc-col"><div class="sc-head" style="background:var(--purple-bg);color:var(--purple)">Intervention（干预）</div><div class="sc-body"><strong>322km新线绕过Mointy</strong><br>取消机车换挂<br>KTZ关税改革<br>USD14.1亿融资动员<br><span class="ev ev-c">Confirmed</span></div></div>
         <div class="sc-col"><div class="sc-head" style="background:var(--teal-bg);color:var(--teal)">Expected Change（预期）</div><div class="sc-body"><strong>端到端→14–18天</strong><br>走廊容量→≥1,100万吨<br>距离–149km<br><span class="ev ev-e">Estimated</span>（条件性）</div></div>
       </div>
@@ -683,12 +692,12 @@ hr.div{border:none;border-top:1px solid var(--border);margin:14px 0}
       <div style="font-size:10px;font-weight:600;color:var(--text3);padding:4px 8px;background:var(--bg3);border-radius:var(--r4);margin-bottom:6px">项目前基线</div>
       <div class="card" style="margin-bottom:10px">
         <div class="mrow"><span class="mrow-name">走廊年货运量（2021）</span><span class="mrow-val">~70万吨</span><span class="mrow-note"><span class="ev ev-c">Confirmed</span> WB/AIIB</span></div>
-        <div class="mrow"><span class="mrow-name">走廊年货运量（2025估计）</span><span class="mrow-val">~520万吨</span><span class="mrow-note"><span class="ev ev-e">Estimated</span> OECD/WB</span></div>
+        <div class="mrow"><span class="mrow-name">走廊年货运量（2025估计）</span><span class="mrow-val">2024年4.5M吨（+63% YoY）</span><span class="mrow-note"><span class="ev ev-e">Estimated</span> OECD/WB</span></div>
         <div class="mrow"><span class="mrow-name">端到端运输时间（中→欧）</span><span class="mrow-val">18–23天</span><span class="mrow-note"><span class="ev ev-c">Confirmed</span> 项目文件</span></div>
         <div class="mrow"><span class="mrow-name">Mointy→Zharyk绕行距离</span><span class="mrow-val">+149 km</span><span class="mrow-note"><span class="ev ev-c">Confirmed</span> AIIB P001038</span></div>
         <div class="mrow"><span class="mrow-name">Mointy节点机车换挂</span><span class="mrow-val">存在</span><span class="mrow-note"><span class="ev ev-c">Confirmed</span> AIIB P001038</span></div>
         <div class="mrow"><span class="mrow-name">KTZ铁路网络总里程</span><span class="mrow-val">~16,000 km</span><span class="mrow-note"><span class="ev ev-c">Confirmed</span> KTZ年报</span></div>
-        <div class="mrow"><span class="mrow-name">World Bank LPI排名（2023）</span><span class="mrow-val">第79位</span><span class="mrow-note"><span class="ev ev-c">Confirmed</span> WB LPI 2023</span></div>
+        <div class="mrow"><span class="mrow-name">World Bank LPI排名（2023）</span><span class="mrow-val">第95位 / 2.7分</span><span class="mrow-note"><span class="ev ev-c">Confirmed</span> WB LPI 2023</span></div>
       </div>
       <div style="font-size:10px;font-weight:600;color:var(--text3);padding:4px 8px;background:var(--purple-bg);border-radius:var(--r4);margin-bottom:6px">项目预期改善</div>
       <div class="card" style="margin-bottom:10px">
@@ -712,30 +721,67 @@ hr.div{border:none;border-top:1px solid var(--border);margin:14px 0}
     <!-- Tab 2: BC -->
     <div id="ptab-pbc" class="tab-pane">
       <div class="nb nb-purple" style="margin-bottom:12px;font-size:12px">以下为 ex-ante 诊断，AI-generated diagnosis，不代表官方结论。</div>
-      <div class="label">失效类型扫描</div>
-      <div class="card" style="margin-bottom:12px">
-        <div style="display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;font-weight:500;width:200px;flex-shrink:0">Access Failure <span class="ev ev-c">Confirmed</span></span><div class="bar-bg"><div class="bar-fill" style="width:15%;background:#2DA878"></div></div><span class="tag tag-green">低</span></div>
-        <div style="font-size:10px;color:var(--text3);padding:3px 0 6px">Dostyk–Mointy–Aktau走廊通道已连通</div>
-        <div style="display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;font-weight:500;width:200px;flex-shrink:0">Efficiency Failure <span class="ev ev-c">Confirmed</span></span><div class="bar-bg"><div class="bar-fill" style="width:88%;background:#D95555"></div></div><span class="tag tag-red">极高</span></div>
-        <div style="font-size:10px;color:var(--text3);padding:3px 0 6px">Mointy节点拥堵+绕行149km；端到端18–23天</div>
-        <div style="display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--border)"><span style="font-size:12px;font-weight:500;width:200px;flex-shrink:0">Coordination Failure <span class="ev ev-e">Estimated</span></span><div class="bar-bg"><div class="bar-fill" style="width:52%;background:#E8A040"></div></div><span class="tag tag-amber">中等</span></div>
-        <div style="font-size:10px;color:var(--text3);padding:3px 0 6px">TITR多国协调2024年启动；非本项目直接解决目标</div>
-        <div style="display:flex;align-items:center;gap:8px;padding:6px 0"><span style="font-size:12px;font-weight:500;width:200px;flex-shrink:0">Utilization Failure <span class="ev ev-c">Confirmed</span></span><div class="bar-bg"><div class="bar-fill" style="width:10%;background:#2DA878"></div></div><span class="tag tag-teal">反转</span></div>
-        <div style="font-size:10px;color:var(--text3);padding:3px 0">需求超过供给；供给瓶颈压制有效需求（反向Utilization问题）</div>
+      <div class="label">国家层失效扫描（哈萨克斯坦·全项目统一）</div>
+      <div class="card" style="margin-bottom:14px">
+        <div style="font-size:11px;color:var(--text2);margin-bottom:8px">四类失效在哈萨克斯坦中间走廊系统中的严重程度（0–100）。<strong>此评分为国家层判断，三个项目完全一致。</strong>分值越高代表该类失效对走廊的制约越强。</div>
+        <div style="display:flex;align-items:center;gap:8px;padding:6px 10px;border-bottom:1px solid var(--border)">
+          <span style="font-size:12px;font-weight:500;width:200px;flex-shrink:0">Access Failure <span class="ev ev-c">C</span></span>
+          <div class="bar-bg"><div class="bar-fill" style="width:25%;background:#2DA878"></div></div>
+          <span style="margin-left:8px;font-size:11px;color:var(--green);font-weight:600;width:28px">25</span>
+          <span class="tag tag-green">低</span>
+        </div>
+        <div style="font-size:10px;color:var(--text3);padding:2px 0 6px 10px">Dostyk–Mointy–Aktau走廊通道已连通；非物理接入缺失</div>
+        <div style="display:flex;align-items:center;gap:8px;padding:6px 10px;border-bottom:1px solid var(--border)">
+          <span style="font-size:12px;font-weight:500;width:200px;flex-shrink:0">Utilization Failure <span class="ev ev-c">C</span></span>
+          <div class="bar-bg"><div class="bar-fill" style="width:41%;background:#E8A040"></div></div>
+          <span style="margin-left:8px;font-size:11px;color:var(--amber);font-weight:600;width:28px">41</span>
+          <span class="tag tag-amber">中低</span>
+        </div>
+        <div style="font-size:10px;color:var(--text3);padding:2px 0 6px 10px">需求超过供给（反向Utilization信号）；2024年+63%增长，被压制的是供给侧</div>
+        <div style="display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:var(--r6);background:var(--red-bg);margin:2px 0">
+          <span style="font-size:12px;font-weight:600;width:200px;flex-shrink:0;color:var(--text1)">Efficiency Failure <span class="ev ev-c">C</span></span>
+          <div class="bar-bg"><div class="bar-fill" style="width:89%;background:#D95555"></div></div>
+          <span style="margin-left:8px;font-size:11px;color:var(--red);font-weight:600;width:28px">89</span>
+          <span class="tag tag-red">极高</span>
+        </div>
+        <div style="font-size:10px;color:var(--text3);padding:2px 0 6px 10px">Mointy节点拥堵+绕行149km；端到端18–23天；运输成本高企</div>
+        <div style="display:flex;align-items:center;gap:8px;padding:6px 10px">
+          <span style="font-size:12px;font-weight:500;width:200px;flex-shrink:0">Coordination Failure <span class="ev ev-e">E</span></span>
+          <div class="bar-bg"><div class="bar-fill" style="width:63%;background:#E8A040"></div></div>
+          <span style="margin-left:8px;font-size:11px;color:var(--amber);font-weight:600;width:28px">63</span>
+          <span class="tag tag-amber">中高</span>
+        </div>
+        <div style="font-size:10px;color:var(--text3);padding:2px 0 0 10px">TITR多国协调2024年启动；海关数据互通度低；多边制度成熟度不足</div>
+      </div>
+      <div class="label">项目层 BC 识别 · P001038 铁路走廊扩容</div>
+      <div class="nb nb-blue" style="font-size:12px;margin-bottom:10px">
+        国家层<strong> Efficiency Failure 评分最高（89分）</strong>，为走廊当前核心制约。P001038 直接针对 Efficiency Failure 中的<strong>节点型物理瓶颈</strong>（Mointy换挂+绕行149km），是对当前最强制约的直接干预。
       </div>
       <div class="g2" style="margin-bottom:12px">
-        <div class="bc-box"><div class="bc-lbl">Binding Constraint（ex-ante）</div><div class="bc-val">Efficiency Failure</div><div style="font-size:11px;color:var(--purple);margin-top:3px">物理容量瓶颈（节点型）</div></div>
-        <div class="card"><div class="label">识别路径</div><div style="font-size:12px;color:var(--text2);line-height:1.7">基础设施已存在 → 排除Access<br>需求激增+7倍 → 排除需求缺失型<br>高时间/距离成本来自运输路段本身<br>→ <strong style="color:var(--text1)">节点型技术性Efficiency Failure</strong></div></div>
+        <div class="bc-box">
+          <div class="bc-lbl">本项目 Binding Constraint</div>
+          <div class="bc-val">Efficiency Failure（节点型）</div>
+          <div style="font-size:11px;color:var(--purple);margin-top:3px">Mointy–Zharyk物理容量瓶颈</div>
+        </div>
+        <div class="card">
+          <div class="label">项目作用于失效的路径</div>
+          <div style="font-size:12px;color:var(--text2);line-height:1.7">
+            基础设施已存在 → 排除Access<br>
+            需求激增+63% → 排除需求缺失型<br>
+            高时间/距离成本来自Mointy节点本身<br>
+            → <strong style="color:var(--text1)">322km新线直接消除节点瓶颈</strong>
+          </div>
+        </div>
       </div>
       <div class="label">失效因果链</div>
       <div class="chain" style="margin-bottom:10px">
-        <span class="chain-item" style="background:var(--amber-bg);color:var(--amber)">现有路线绕行+149km</span><span class="chain-arr">→</span>
+        <span class="chain-item" style="background:var(--amber-bg);color:var(--amber)">绕行+149km</span><span class="chain-arr">→</span>
         <span class="chain-item" style="background:var(--amber-bg);color:var(--amber)">Mointy换挂等待</span><span class="chain-arr">→</span>
         <span class="chain-item" style="background:var(--red-bg);color:var(--red)">节点拥堵全线传导</span><span class="chain-arr">→</span>
         <span class="chain-item" style="background:var(--red-bg);color:var(--red)">有效容量受限</span><span class="chain-arr">→</span>
-        <span class="chain-item">被压制需求无法释放</span>
+        <span class="chain-item">被压制需求</span>
       </div>
-      <div class="nb nb-amber" style="font-size:12px"><strong>BC转移风险：</strong>哈萨克斯坦段解决后，走廊BC预计转移至里海跨海段。<span class="ev ev-a">Assumption</span></div>
+      <div class="nb nb-amber" style="font-size:12px"><strong>BC转移风险：</strong>KZ段解决后，走廊BC预计转移至里海跨海段（Aktau/Kuryk港口容量+船舶）。Coordination Failure（63分）是次要制约，KTZ关税改革同步推进可部分缓解。<span class="ev ev-a">A</span></div>
       <div class="label" style="margin-top:12px">误诊后果对比</div>
       <div class="nb nb-warn" style="font-size:12px"><strong>误诊为Access Failure</strong> → 分散投资于外围支线 → 核心拥堵持续</div>
       <div class="nb nb-warn" style="font-size:12px"><strong>误诊为Coordination优先</strong> → 聚焦TITR软性机制 → 物理瓶颈抵消软干预效果</div>
@@ -787,6 +833,484 @@ hr.div{border:none;border-top:1px solid var(--border);margin:14px 0}
   </div>
 </div>
 
+
+<!-- ═══ PAGE: P000914 道路韧性 ═══ -->
+<div id="page-project-kz-road" class="page" style="display:none">
+  <div class="page-hdr">
+    <div class="breadcrumb"><span class="bc-crumb" onclick="nav('portfolio')">Portfolio</span><span class="bc-sep">›</span><span class="bc-crumb" onclick="nav('country-kz')">哈萨克斯坦</span><span class="bc-sep">›</span><span class="bc-current">P000914 道路韧性与连通性提升</span></div>
+    <div class="page-title">哈萨克斯坦：道路韧性与连通性提升项目</div>
+    <div class="page-sub">AIIB P000914 · Transport Resilience and Connectivity Enhancement · 批准：2024年12月</div>
+    <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px">
+      <span class="tag tag-blue">AIIB USD 6.5亿</span><span class="tag tag-gray">世行 USD 6.5亿</span><span class="tag tag-amber">498 km 公路升级</span><span class="tag tag-green">Sovereign · Category B · OPBRC试点</span>
+    </div>
+    <div style="margin-top:10px;padding:7px 12px;background:var(--bg2);border:1px solid var(--border2);border-radius:var(--r6);font-size:11px;color:var(--text2)"><strong style="color:var(--amber)">⚠ 诊断性质：</strong>ex-ante 诊断，AI-generated diagnosis，不等同于官方结论。哈萨克斯坦国家层评分全平台统一（56分），不随具体项目变化。</div>
+  </div>
+  <div class="page-body">
+    <div class="tab-row">
+      <button class="tab-btn active" onclick="switchProjTab(event,'r-pov')">⓪ 诊断总览</button>
+      <button class="tab-btn" onclick="switchProjTab(event,'r-psys')">① 系统状态</button>
+      <button class="tab-btn" onclick="switchProjTab(event,'r-pbc')">② 约束识别</button>
+      <button class="tab-btn" onclick="switchProjTab(event,'r-pint')">③ 干预逻辑</button>
+      <button class="tab-btn" onclick="switchProjTab(event,'r-pbeh')">④ 行为响应</button>
+    </div>
+
+    <div id="ptab-r-pov" class="tab-pane active">
+      <div class="g2" style="align-items:start">
+        <div class="card">
+          <div class="label" style="margin-bottom:8px">哈萨克斯坦 Connectivity Score（国家层·全平台统一）</div>
+          <canvas id="roadRadar" width="220" height="205"></canvas>
+          <div style="text-align:center;margin-top:8px;padding:8px;background:var(--purple-bg);border-radius:var(--r6)">
+            <div style="font-size:10px;color:var(--purple);font-weight:600;text-transform:uppercase">Overall · 国家层 · 全项目统一</div>
+            <div style="font-size:26px;font-weight:600;color:var(--purple)">56</div>
+            <div style="font-size:10px;color:var(--purple)">/ 100 · ex-ante · AI-generated</div>
+          </div>
+          <div style="font-size:10px;color:var(--text3);margin-top:5px">此评分反映哈萨克斯坦整体连通性状态，不随具体项目变化</div>
+        </div>
+        <div>
+          <div class="label">分维度评分（含各维度韧性子属性）</div>
+          <div class="card" style="margin-bottom:10px">
+            <div class="score-row"><span class="score-name" style="width:100px">Access</span><div class="bar-bg"><div class="bar-fill" style="width:76%;background:#2DA878"></div></div><span class="score-num" style="color:var(--green)">76</span><span style="margin-left:6px"><span class="ev ev-c">Confirmed</span></span></div>
+            <div style="font-size:10px;color:var(--text3);margin:-2px 0 1px 108px">主干通道已连通；Dostyk/Altynkol–Aktau/Kuryk贯通</div>
+            <div style="font-size:10px;color:var(--teal);margin:0 0 6px 108px">&#8627; Resilience: 替代路线有限，单一走廊高度依赖 <span class="ev ev-a">A</span></div>
+            <div class="score-row"><span class="score-name" style="width:100px">Utilization</span><div class="bar-bg"><div class="bar-fill" style="width:68%;background:#4A90D9"></div></div><span class="score-num" style="color:var(--accent)">68</span><span style="margin-left:6px"><span class="ev ev-c">Confirmed</span></span></div>
+            <div style="font-size:10px;color:var(--text3);margin:-2px 0 1px 108px">2024年TITR货运量4.5M吨（+63%）；供给压制更大需求</div>
+            <div style="font-size:10px;color:var(--teal);margin:0 0 6px 108px">&#8627; Resilience: 需求依赖北方走廊制裁驱动，存在回流风险 <span class="ev ev-a">A</span></div>
+            <div class="score-row"><span class="score-name" style="width:100px">Efficiency</span><div class="bar-bg"><div class="bar-fill" style="width:32%;background:#D95555"></div></div><span class="score-num" style="color:var(--red)">32</span><span style="margin-left:6px"><span class="ev ev-c">Confirmed</span></span></div>
+            <div style="font-size:10px;color:var(--text3);margin:-2px 0 1px 108px">Mointy节点拥堵；绕行+149km；端到端18–23天</div>
+            <div style="font-size:10px;color:var(--teal);margin:0 0 6px 108px">&#8627; Resilience: 单节点瓶颈，无备用调度，冲击传导快 <span class="ev ev-a">A</span></div>
+            <div class="score-row"><span class="score-name" style="width:100px">Coordination</span><div class="bar-bg"><div class="bar-fill" style="width:52%;background:#E8A040"></div></div><span class="score-num" style="color:var(--amber)">52</span><span style="margin-left:6px"><span class="ev ev-e">Estimated</span></span></div>
+            <div style="font-size:10px;color:var(--text3);margin:-2px 0 1px 108px">TITR协调中心2024年6月启动；KTZ关税改革进行中</div>
+            <div style="font-size:10px;color:var(--teal);margin:0 0 4px 108px">&#8627; Resilience: TITR机制尚脆弱，危机协调能力未检验 <span class="ev ev-e">E</span></div>
+            <hr class="div" style="margin:8px 0">
+            <div style="font-size:10px;color:var(--text3)"><span class="ev ev-c">C</span> 直接数据 &nbsp;<span class="ev ev-e">E</span> 推断 &nbsp;<span class="ev ev-a">A</span> 假设 &nbsp;<span style="color:var(--teal)">&#8627;</span> 各维度韧性子属性</div>
+          </div>
+          <div class="bc-box" style="margin-bottom:10px">
+            <div class="bc-lbl">项目层 Binding Constraint · P000914</div>
+            <div class="bc-val">Efficiency Failure（线性型）</div>
+            <div style="font-size:11px;color:var(--purple);margin-top:3px">路面质量+气候韧性不足 → 持续性高运营成本</div>
+          </div>
+          <div class="nb nb-blue" style="font-size:12px"><strong>与P001038的互补：</strong>两项目均为Efficiency Failure，但瓶颈形态不同——P001038是节点型（Mointy换挂），P000914是线性型（路面质量）。铁路+公路双通道互补，共同支撑中间走廊哈萨克斯坦段。</div>
+        </div>
+      </div>
+      <hr class="div">
+      <div class="label">项目影响路径</div>
+      <div class="sc-grid" style="margin-bottom:0">
+        <div class="sc-col"><div class="sc-head" style="background:var(--bg3);color:var(--text2)">Before（项目前）</div><div class="sc-body"><strong>三级公路路况差</strong><br>高VOC运营成本<br>频繁维修中断<br>货运频次受压制<br>农村接入受限</div></div>
+        <div class="sc-col"><div class="sc-head" style="background:var(--purple-bg);color:var(--purple)">Intervention（干预）</div><div class="sc-body"><strong>498km公路升级</strong><br>三级→一级双向<br>气候韧性路面设计<br>OPBRC合同模式<br><span class="ev ev-c">Confirmed</span></div></div>
+        <div class="sc-col"><div class="sc-head" style="background:var(--teal-bg);color:var(--teal)">Expected Change（预期）</div><div class="sc-body"><strong>VOC成本下降</strong><br>货运频次增加<br>农村最后一英里改善<br>哈萨克斯坦首个收费公路<br><span class="ev ev-e">Estimated</span></div></div>
+      </div>
+      <div style="padding:8px 12px;background:var(--bg2);border:1px solid var(--border);border-radius:0 0 var(--r8) var(--r8);border-top:none">
+        <span style="font-size:10px;font-weight:600;color:var(--text3);text-transform:uppercase">Post-project Monitoring <span class="ev ev-t">To be verified</span></span>
+        <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:5px">
+          <span class="tag tag-gray">Jezkazgan-Karagandy货运量</span><span class="tag tag-gray">公路VOC成本指数</span><span class="tag tag-gray">OPBRC路面质量评分</span><span class="tag tag-gray">农村道路接入改善</span><span class="tag tag-gray">极端气候影响频次</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="ptab-r-psys" class="tab-pane">
+      <div class="g3" style="margin-bottom:12px">
+        <div class="card"><div style="font-size:10px;font-weight:600;color:var(--accent);margin-bottom:4px">走廊层</div><div style="font-size:12px;color:var(--text2)"><strong style="color:var(--text1)">中间走廊（公路段）</strong><br>Jezkazgan–Karagandy–Dostyk<br>连通中部采矿工业区与东部口岸</div></div>
+        <div class="card"><div style="font-size:10px;font-weight:600;color:var(--green);margin-bottom:4px">国家层</div><div style="font-size:12px;color:var(--text2)"><strong style="color:var(--text1)">哈萨克斯坦 / QAJ（KazAvtoZhol）</strong><br>国家公路公司 · 世行+AIIB联合 USD 13亿<br>LPI 2023：第95位（2.7分）</div></div>
+        <div class="card"><div style="font-size:10px;font-weight:600;color:var(--amber);margin-bottom:4px">线路层</div><div style="font-size:12px;color:var(--text2)"><strong style="color:var(--text1)">A17公路 498km段</strong><br>三级→一级双向公路<br>哈萨克斯坦首个OPBRC合同试点</div></div>
+      </div>
+      <div class="label">数据证据面板</div>
+      <div class="nb nb-amber" style="margin-bottom:8px;font-size:11px"><span class="ev ev-c">C</span> 直接数据 &nbsp;<span class="ev ev-e">E</span> 第三方推断 &nbsp;<span class="ev ev-a">A</span> 假设 &nbsp;<span class="ev ev-t">T</span> 待核实</div>
+      <div style="font-size:10px;font-weight:600;padding:4px 8px;background:var(--bg3);border-radius:var(--r4);color:var(--text3);margin-bottom:6px">项目前基线</div>
+      <div class="card" style="margin-bottom:10px">
+        <div class="mrow"><span class="mrow-name">项目路段长度</span><span class="mrow-val">498 km</span><span class="mrow-note"><span class="ev ev-c">C</span> AIIB P000914</span></div>
+        <div class="mrow"><span class="mrow-name">路段现状等级</span><span class="mrow-val">三级公路</span><span class="mrow-note"><span class="ev ev-c">C</span> 项目文件</span></div>
+        <div class="mrow"><span class="mrow-name">日均交通量（Karagandy段）</span><span class="mrow-val">~10,000 vpd</span><span class="mrow-note"><span class="ev ev-c">C</span> 项目文件</span></div>
+        <div class="mrow"><span class="mrow-name">WB LPI排名（2023）</span><span class="mrow-val">第95位 / 2.7分</span><span class="mrow-note"><span class="ev ev-c">C</span> WB LPI 2023</span></div>
+      </div>
+      <div style="font-size:10px;font-weight:600;padding:4px 8px;background:var(--purple-bg);border-radius:var(--r4);color:var(--text3);margin-bottom:6px">项目预期改善</div>
+      <div class="card" style="margin-bottom:10px">
+        <div class="mrow"><span class="mrow-name">升级后等级</span><span class="mrow-val">一级双向公路</span><span class="mrow-note"><span class="ev ev-c">C</span> AIIB P000914</span></div>
+        <div class="mrow"><span class="mrow-name">总项目成本</span><span class="mrow-val">USD 15.3亿</span><span class="mrow-note"><span class="ev ev-c">C</span> AIIB+世行+政府</span></div>
+        <div class="mrow"><span class="mrow-name">农村最后一英里改善</span><span class="mrow-val">~40 km</span><span class="mrow-note"><span class="ev ev-c">C</span> AIIB P000914</span></div>
+        <div class="mrow"><span class="mrow-name">合同模式</span><span class="mrow-val">OPBRC设计-建造-维护</span><span class="mrow-note"><span class="ev ev-c">C</span> 哈萨克斯坦首个试点</span></div>
+      </div>
+      <div style="font-size:10px;font-weight:600;padding:4px 8px;background:var(--teal-bg);border-radius:var(--r4);color:var(--text3);margin-bottom:6px">项目后追踪指标 <span class="ev ev-t">To be verified</span></div>
+      <div class="card">
+        <div class="mrow"><span class="mrow-name">Jezkazgan-Karagandy货运量</span><span class="mrow-val">年度统计</span><span class="mrow-note">容量目标达成率</span></div>
+        <div class="mrow"><span class="mrow-name">公路VOC成本指数</span><span class="mrow-val">年度监测</span><span class="mrow-note">效率改善验证</span></div>
+        <div class="mrow"><span class="mrow-name">OPBRC路面质量评分</span><span class="mrow-val">季度监测</span><span class="mrow-note">制度创新验证</span></div>
+        <div class="mrow"><span class="mrow-name">极端气候事件影响频次</span><span class="mrow-val">年度统计</span><span class="mrow-note">气候韧性设计验证</span></div>
+      </div>
+    </div>
+
+    <div id="ptab-r-pbc" class="tab-pane">
+      <div class="nb nb-purple" style="margin-bottom:12px;font-size:12px">以下为 ex-ante 诊断，AI-generated diagnosis，不代表官方结论。</div>
+      <div class="label">国家层失效扫描（哈萨克斯坦·全项目统一）</div>
+      <div class="card" style="margin-bottom:14px">
+        <div style="font-size:11px;color:var(--text2);margin-bottom:8px">四类失效在哈萨克斯坦中间走廊系统中的严重程度（0–100）。<strong>此评分为国家层判断，三个项目完全一致。</strong>分值越高代表该类失效对走廊的制约越强。</div>
+        <div style="display:flex;align-items:center;gap:8px;padding:6px 10px;border-bottom:1px solid var(--border)">
+          <span style="font-size:12px;font-weight:500;width:200px;flex-shrink:0">Access Failure <span class="ev ev-c">C</span></span>
+          <div class="bar-bg"><div class="bar-fill" style="width:25%;background:#2DA878"></div></div>
+          <span style="margin-left:8px;font-size:11px;color:var(--green);font-weight:600;width:28px">25</span>
+          <span class="tag tag-green">低</span>
+        </div>
+        <div style="font-size:10px;color:var(--text3);padding:2px 0 6px 10px">Dostyk–Mointy–Aktau走廊通道已连通；非物理接入缺失</div>
+        <div style="display:flex;align-items:center;gap:8px;padding:6px 10px;border-bottom:1px solid var(--border)">
+          <span style="font-size:12px;font-weight:500;width:200px;flex-shrink:0">Utilization Failure <span class="ev ev-c">C</span></span>
+          <div class="bar-bg"><div class="bar-fill" style="width:41%;background:#E8A040"></div></div>
+          <span style="margin-left:8px;font-size:11px;color:var(--amber);font-weight:600;width:28px">41</span>
+          <span class="tag tag-amber">中低</span>
+        </div>
+        <div style="font-size:10px;color:var(--text3);padding:2px 0 6px 10px">需求超过供给（反向Utilization信号）；2024年+63%增长，被压制的是供给侧</div>
+        <div style="display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:var(--r6);background:var(--red-bg);margin:2px 0">
+          <span style="font-size:12px;font-weight:600;width:200px;flex-shrink:0;color:var(--text1)">Efficiency Failure <span class="ev ev-c">C</span></span>
+          <div class="bar-bg"><div class="bar-fill" style="width:89%;background:#D95555"></div></div>
+          <span style="margin-left:8px;font-size:11px;color:var(--red);font-weight:600;width:28px">89</span>
+          <span class="tag tag-red">极高</span>
+        </div>
+        <div style="font-size:10px;color:var(--text3);padding:2px 0 6px 10px">Mointy节点拥堵+绕行149km；端到端18–23天；运输成本高企</div>
+        <div style="display:flex;align-items:center;gap:8px;padding:6px 10px">
+          <span style="font-size:12px;font-weight:500;width:200px;flex-shrink:0">Coordination Failure <span class="ev ev-e">E</span></span>
+          <div class="bar-bg"><div class="bar-fill" style="width:63%;background:#E8A040"></div></div>
+          <span style="margin-left:8px;font-size:11px;color:var(--amber);font-weight:600;width:28px">63</span>
+          <span class="tag tag-amber">中高</span>
+        </div>
+        <div style="font-size:10px;color:var(--text3);padding:2px 0 0 10px">TITR多国协调2024年启动；海关数据互通度低；多边制度成熟度不足</div>
+      </div>
+      <div class="label">项目层 BC 识别 · P000914 道路韧性与连通性提升</div>
+      <div class="nb nb-blue" style="font-size:12px;margin-bottom:10px">
+        国家层<strong> Efficiency Failure 评分最高（89分）</strong>。P000914 同样针对 Efficiency Failure，但作用的是<strong>线性型路面质量瓶颈</strong>（A17公路498km段），与P001038的节点型瓶颈互补，共同构成铁路+公路双通道提效方案。
+      </div>
+      <div class="g2" style="margin-bottom:12px">
+        <div class="bc-box">
+          <div class="bc-lbl">本项目 Binding Constraint</div>
+          <div class="bc-val">Efficiency Failure（线性型）</div>
+          <div style="font-size:11px;color:var(--purple);margin-top:3px">路面质量+气候韧性不足 → 高运营成本</div>
+        </div>
+        <div class="card">
+          <div class="label">项目作用于失效的路径</div>
+          <div style="font-size:12px;color:var(--text2);line-height:1.7">
+            道路存在 → 非物理Access缺失<br>
+            工业货运需求存在 → 非需求缺失型<br>
+            高VOC成本来自路面质量本身<br>
+            → <strong style="color:var(--text1)">498km升级直接降低线性段运营成本</strong>
+          </div>
+        </div>
+      </div>
+      <div class="label">失效因果链</div>
+      <div class="chain" style="margin-bottom:10px">
+        <span class="chain-item" style="background:var(--amber-bg);color:var(--amber)">三级公路路面差</span><span class="chain-arr">→</span>
+        <span class="chain-item" style="background:var(--amber-bg);color:var(--amber)">高VOC运营成本</span><span class="chain-arr">→</span>
+        <span class="chain-item" style="background:var(--red-bg);color:var(--red)">运营商减少频次</span><span class="chain-arr">→</span>
+        <span class="chain-item" style="background:var(--red-bg);color:var(--red)">货运通道利用率低</span><span class="chain-arr">→</span>
+        <span class="chain-item">工业需求被压制</span>
+      </div>
+      <div class="nb nb-purple" style="font-size:12px"><strong>气候韧性特殊性：</strong>本项目将Resilience显性纳入工程设计（OPBRC气候韧性路面），直接作用于Efficiency维度的Resilience子属性，是三个KZ项目中在设计层面最直接回应Resilience问题的案例。<span class="ev ev-c">C</span></div>
+    </div>
+
+    <div id="ptab-r-pint" class="tab-pane">
+      <div class="label">干预逻辑链条</div>
+      <div class="chain" style="margin-bottom:12px">
+        <span class="chain-item" style="background:var(--purple-bg);color:var(--purple)">AIIB+世行联合融资</span><span class="chain-arr">→</span>
+        <span class="chain-item" style="background:var(--blue-bg);color:var(--accent)">498km公路升级</span><span class="chain-arr">→</span>
+        <span class="chain-item" style="background:var(--amber-bg);color:var(--amber)">路面质量+气候韧性</span><span class="chain-arr">→</span>
+        <span class="chain-item" style="background:var(--teal-bg);color:var(--teal)">VOC成本下降</span><span class="chain-arr">→</span>
+        <span class="chain-item" style="background:var(--green-bg);color:var(--green)">货运频次恢复</span>
+      </div>
+      <div class="g2" style="margin-bottom:12px">
+        <div class="card"><div class="label">Component 1：道路升级（针对Efficiency Failure）</div><div style="font-size:12px;color:var(--text2);line-height:1.8">三级→一级双向公路 <span class="ev ev-c">C</span><br>气候韧性路面设计 <span class="ev ev-c">C</span><br>~40km农村最后一英里 <span class="ev ev-c">C</span><br>电子收费+轴重管理 <span class="ev ev-c">C</span></div></div>
+        <div class="card"><div class="label">Component 2：制度创新（针对Coordination层）</div><div style="font-size:12px;color:var(--text2);line-height:1.8">首个OPBRC合同模式试点 <span class="ev ev-c">C</span><br>气候韧性路面国家标准更新 <span class="ev ev-e">E</span><br>QAJ机构能力建设 <span class="ev ev-e">E</span></div></div>
+      </div>
+      <div class="label">关键假设</div>
+      <div class="nb nb-ok" style="font-size:12px"><strong>假设1（已具备）：</strong>工业货运需求真实存在（Jezkazgan采矿区） <span class="ev ev-c">C</span></div>
+      <div class="nb nb-ok" style="font-size:12px"><strong>假设2（已具备）：</strong>QAJ具备实施能力，世行+AIIB联合监管 <span class="ev ev-c">C</span></div>
+      <div class="nb nb-amber" style="font-size:12px"><strong>假设3（条件性）：</strong>OPBRC新模式哈萨克斯坦首次试点，执行风险存在 <span class="ev ev-e">E</span></div>
+      <div class="nb nb-amber" style="font-size:12px"><strong>假设4（条件性）：</strong>气候事件频率不超出设计标准 <span class="ev ev-a">A</span></div>
+    </div>
+
+    <div id="ptab-r-pbeh" class="tab-pane">
+      <div class="label">行为响应假设（显性化）</div>
+      <div class="resp-row"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px"><span style="font-size:12px;font-weight:500;color:var(--text1)">工业货运企业（矿产、化工）</span><span class="tag tag-green">响应概率：高</span></div><div style="font-size:12px;color:var(--text2)">触发：路面改善 → 轴载限制放宽 → 单次运量增加 → 单位运输成本下降</div><div class="nb nb-ok" style="font-size:11px;margin-top:5px">Jezkazgan采矿区货运需求明确，路况是主要制约 <span class="ev ev-c">C</span></div></div>
+      <div class="resp-row"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px"><span style="font-size:12px;font-weight:500;color:var(--text1)">物流服务商</span><span class="tag tag-amber">响应概率：中，有滞后</span></div><div style="font-size:12px;color:var(--text2)">触发：新路面→可靠时刻表→新增班次；预计滞后：竣工后6–18个月</div><div class="nb nb-amber" style="font-size:11px;margin-top:5px">响应速度取决于OPBRC合同执行质量 <span class="ev ev-e">E</span></div></div>
+      <div class="resp-row"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px"><span style="font-size:12px;font-weight:500;color:var(--text1)">农村社区（最后一英里）</span><span class="tag tag-amber">响应概率：中，渐进式</span></div><div style="font-size:12px;color:var(--text2)">触发：40km农村道路改善 → 农产品市场接入增加 → 收入渐进提升</div><div class="nb nb-blue" style="font-size:11px;margin-top:5px">渐进响应，需3–5年才能观测到显著收入变化 <span class="ev ev-e">E</span></div></div>
+      <div class="resp-row"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px"><span style="font-size:12px;font-weight:500;color:var(--text1)">哈萨克斯坦政府 / QAJ</span><span class="tag tag-green">响应概率：高</span></div><div style="font-size:12px;color:var(--text2)">世行+AIIB联合监管，政府承诺OPBRC模式推广 <span class="ev ev-c">C</span></div></div>
+      <hr class="div">
+      <div class="label">早期预警指标 <span class="ev ev-t">To be verified</span></div>
+      <div class="card">
+        <div class="mrow"><span class="mrow-name">Jezkazgan-Karagandy段货运量</span><span class="mrow-val">年度统计</span><span class="mrow-note">需求释放信号</span></div>
+        <div class="mrow"><span class="mrow-name">公路VOC成本指数</span><span class="mrow-val">年度监测</span><span class="mrow-note">效率改善验证</span></div>
+        <div class="mrow"><span class="mrow-name">OPBRC路面质量评分</span><span class="mrow-val">季度监测</span><span class="mrow-note">制度创新验证</span></div>
+        <div class="mrow"><span class="mrow-name">极端气候事件影响频次</span><span class="mrow-val">年度统计</span><span class="mrow-note">气候韧性设计验证</span></div>
+      </div>
+      <div style="font-size:10px;color:var(--text3);margin-top:10px;padding-top:8px;border-top:1px solid var(--border)">数据来源：AIIB P000914项目文件 · World Bank P500565 · KazAvtoZhol官网 · 批准：2024年12月12日</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PAGE: P000870 Almaty铁路绕城 ═══ -->
+<div id="page-project-kz-almaty" class="page" style="display:none">
+  <div class="page-hdr">
+    <div class="breadcrumb"><span class="bc-crumb" onclick="nav('portfolio')">Portfolio</span><span class="bc-sep">›</span><span class="bc-crumb" onclick="nav('country-kz')">哈萨克斯坦</span><span class="bc-sep">›</span><span class="bc-current">P000870 Almaty 铁路绕城项目</span></div>
+    <div class="page-title">哈萨克斯坦：Almaty 铁路绕城项目</div>
+    <div class="page-sub">AIIB P000870 · Almaty Railway Bypass Project · 批准：2025年7月15日 · Nonsovereign</div>
+    <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:8px">
+      <span class="tag tag-blue">AIIB USD 1.5亿（CHF计价）</span><span class="tag tag-gray">IFC联合融资 · MIGA担保</span><span class="tag tag-amber">75 km 单线电气化铁路</span><span class="tag tag-purple">Nonsovereign · Category A · KTZ借款人</span>
+    </div>
+    <div style="margin-top:10px;padding:7px 12px;background:var(--bg2);border:1px solid var(--border2);border-radius:var(--r6);font-size:11px;color:var(--text2)"><strong style="color:var(--amber)">⚠ 诊断性质：</strong>ex-ante 诊断，AI-generated diagnosis，不等同于官方结论。哈萨克斯坦国家层评分全平台统一（56分），不随具体项目变化。</div>
+  </div>
+  <div class="page-body">
+    <div class="tab-row">
+      <button class="tab-btn active" onclick="switchProjTab(event,'a-pov')">⓪ 诊断总览</button>
+      <button class="tab-btn" onclick="switchProjTab(event,'a-psys')">① 系统状态</button>
+      <button class="tab-btn" onclick="switchProjTab(event,'a-pbc')">② 约束识别</button>
+      <button class="tab-btn" onclick="switchProjTab(event,'a-pint')">③ 干预逻辑</button>
+      <button class="tab-btn" onclick="switchProjTab(event,'a-pbeh')">④ 行为响应</button>
+    </div>
+
+    <div id="ptab-a-pov" class="tab-pane active">
+      <div class="g2" style="align-items:start">
+        <div class="card">
+          <div class="label" style="margin-bottom:8px">哈萨克斯坦 Connectivity Score（国家层·全平台统一）</div>
+          <canvas id="almatyRadar" width="220" height="205"></canvas>
+          <div style="text-align:center;margin-top:8px;padding:8px;background:var(--purple-bg);border-radius:var(--r6)">
+            <div style="font-size:10px;color:var(--purple);font-weight:600;text-transform:uppercase">Overall · 国家层 · 全项目统一</div>
+            <div style="font-size:26px;font-weight:600;color:var(--purple)">56</div>
+            <div style="font-size:10px;color:var(--purple)">/ 100 · ex-ante · AI-generated</div>
+          </div>
+          <div style="font-size:10px;color:var(--text3);margin-top:5px">此评分反映哈萨克斯坦整体连通性状态，不随具体项目变化</div>
+        </div>
+        <div>
+          <div class="label">分维度评分（含各维度韧性子属性）</div>
+          <div class="card" style="margin-bottom:10px">
+            <div class="score-row"><span class="score-name" style="width:100px">Access</span><div class="bar-bg"><div class="bar-fill" style="width:76%;background:#2DA878"></div></div><span class="score-num" style="color:var(--green)">76</span><span style="margin-left:6px"><span class="ev ev-c">Confirmed</span></span></div>
+            <div style="font-size:10px;color:var(--text3);margin:-2px 0 1px 108px">主干通道已连通；Dostyk/Altynkol–Aktau/Kuryk贯通</div>
+            <div style="font-size:10px;color:var(--teal);margin:0 0 6px 108px">&#8627; Resilience: 替代路线有限，单一走廊高度依赖 <span class="ev ev-a">A</span></div>
+            <div class="score-row"><span class="score-name" style="width:100px">Utilization</span><div class="bar-bg"><div class="bar-fill" style="width:68%;background:#4A90D9"></div></div><span class="score-num" style="color:var(--accent)">68</span><span style="margin-left:6px"><span class="ev ev-c">Confirmed</span></span></div>
+            <div style="font-size:10px;color:var(--text3);margin:-2px 0 1px 108px">2024年TITR货运量4.5M吨（+63%）；供给压制更大需求</div>
+            <div style="font-size:10px;color:var(--teal);margin:0 0 6px 108px">&#8627; Resilience: 需求依赖北方走廊制裁驱动，存在回流风险 <span class="ev ev-a">A</span></div>
+            <div class="score-row"><span class="score-name" style="width:100px">Efficiency</span><div class="bar-bg"><div class="bar-fill" style="width:32%;background:#D95555"></div></div><span class="score-num" style="color:var(--red)">32</span><span style="margin-left:6px"><span class="ev ev-c">Confirmed</span></span></div>
+            <div style="font-size:10px;color:var(--text3);margin:-2px 0 1px 108px">Mointy节点拥堵；绕行+149km；端到端18–23天</div>
+            <div style="font-size:10px;color:var(--teal);margin:0 0 6px 108px">&#8627; Resilience: 单节点瓶颈，无备用调度，冲击传导快 <span class="ev ev-a">A</span></div>
+            <div class="score-row"><span class="score-name" style="width:100px">Coordination</span><div class="bar-bg"><div class="bar-fill" style="width:52%;background:#E8A040"></div></div><span class="score-num" style="color:var(--amber)">52</span><span style="margin-left:6px"><span class="ev ev-e">Estimated</span></span></div>
+            <div style="font-size:10px;color:var(--text3);margin:-2px 0 1px 108px">TITR协调中心2024年6月启动；KTZ关税改革进行中</div>
+            <div style="font-size:10px;color:var(--teal);margin:0 0 4px 108px">&#8627; Resilience: TITR机制尚脆弱，危机协调能力未检验 <span class="ev ev-e">E</span></div>
+            <hr class="div" style="margin:8px 0">
+            <div style="font-size:10px;color:var(--text3)"><span class="ev ev-c">C</span> 直接数据 &nbsp;<span class="ev ev-e">E</span> 推断 &nbsp;<span class="ev ev-a">A</span> 假设 &nbsp;<span style="color:var(--teal)">&#8627;</span> 各维度韧性子属性</div>
+          </div>
+          <div class="bc-box" style="margin-bottom:10px">
+            <div class="bc-lbl">项目层 Binding Constraint · P000870</div>
+            <div class="bc-val">Coordination Failure</div>
+            <div style="font-size:11px;color:var(--purple);margin-top:3px">城市规划×铁路货运通道制度冲突</div>
+          </div>
+          <div class="nb nb-purple" style="font-size:12px"><strong>为什么是Coordination Failure？</strong>货运列车穿越Almaty市区是历史遗留规划决策——城市用地与铁路货运通道的制度冲突。与P001038（节点型Efficiency）和P000914（线性型Efficiency）形成三种BC类型对比。</div>
+        </div>
+      </div>
+      <hr class="div">
+      <div class="label">项目影响路径</div>
+      <div class="sc-grid" style="margin-bottom:0">
+        <div class="sc-col"><div class="sc-head" style="background:var(--bg3);color:var(--text2)">Before（项目前）</div><div class="sc-body"><strong>货运穿越Almaty市区</strong><br>限速+停靠→全线延误<br>单轨市区段冲击快<br>客运容量被货运占用</div></div>
+        <div class="sc-col"><div class="sc-head" style="background:var(--purple-bg);color:var(--purple)">Intervention（干预）</div><div class="sc-body"><strong>75km绕城新线</strong><br>Zhetygen-Kazybek Bek<br>IFC+AIIB+MIGA联合结构<br>2023年11月已提前开工<br><span class="ev ev-c">Confirmed</span></div></div>
+        <div class="sc-col"><div class="sc-head" style="background:var(--teal-bg);color:var(--teal)">Expected Change（预期）</div><div class="sc-body"><strong>货运脱离市区路段</strong><br>过境时间缩短<br>Almaty客运容量释放<br>走廊+城市双提速<br><span class="ev ev-e">Estimated</span></div></div>
+      </div>
+      <div style="padding:8px 12px;background:var(--bg2);border:1px solid var(--border);border-radius:0 0 var(--r8) var(--r8);border-top:none">
+        <span style="font-size:10px;font-weight:600;color:var(--text3);text-transform:uppercase">Post-project Monitoring <span class="ev ev-t">To be verified</span></span>
+        <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:5px">
+          <span class="tag tag-gray">过境班列频次</span><span class="tag tag-gray">市区段取消使用率</span><span class="tag tag-gray">Almaty客运准点率</span><span class="tag tag-gray">绕城线货运量</span><span class="tag tag-gray">KTZ财务可持续性</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="ptab-a-psys" class="tab-pane">
+      <div class="g3" style="margin-bottom:12px">
+        <div class="card"><div style="font-size:10px;font-weight:600;color:var(--accent);margin-bottom:4px">系统层</div><div style="font-size:12px;color:var(--text2)"><strong style="color:var(--text1)">哈萨克斯坦东南铁路枢纽</strong><br>Almaty是中亚最大城市<br>KTZ网络东段核心节点</div></div>
+        <div class="card"><div style="font-size:10px;font-weight:600;color:var(--green);margin-bottom:4px">项目主体</div><div style="font-size:12px;color:var(--text2)"><strong style="color:var(--text1)">KTZ · 100%国有</strong><br>CIS第三长铁路网络<br>Nonsovereign贷款，Samruk-Kazyna担保</div></div>
+        <div class="card"><div style="font-size:10px;font-weight:600;color:var(--amber);margin-bottom:4px">工程节点</div><div style="font-size:12px;color:var(--text2)"><strong style="color:var(--text1)">Zhetygen → Kazybek Bek</strong><br>75km · 3个新站 · 13座桥梁<br>2023年11月提前开工</div></div>
+      </div>
+      <div class="label">数据证据面板</div>
+      <div class="nb nb-amber" style="margin-bottom:8px;font-size:11px"><span class="ev ev-c">C</span> 直接数据 &nbsp;<span class="ev ev-e">E</span> 第三方推断 &nbsp;<span class="ev ev-a">A</span> 假设 &nbsp;<span class="ev ev-t">T</span> 待核实</div>
+      <div style="font-size:10px;font-weight:600;padding:4px 8px;background:var(--bg3);border-radius:var(--r4);color:var(--text3);margin-bottom:6px">项目前基线</div>
+      <div class="card" style="margin-bottom:10px">
+        <div class="mrow"><span class="mrow-name">Almaty枢纽客货混行问题</span><span class="mrow-val">存在</span><span class="mrow-note"><span class="ev ev-c">C</span> AIIB P000870</span></div>
+        <div class="mrow"><span class="mrow-name">土地征收总面积</span><span class="mrow-val">1,056.43 ha</span><span class="mrow-note"><span class="ev ev-c">C</span> SESIA 2025.04</span></div>
+        <div class="mrow"><span class="mrow-name">已完成土地征收</span><span class="mrow-val">70%</span><span class="mrow-note"><span class="ev ev-c">C</span> SESIA 2025.04</span></div>
+        <div class="mrow"><span class="mrow-name">WB LPI排名（2023）</span><span class="mrow-val">第95位 / 2.7分</span><span class="mrow-note"><span class="ev ev-c">C</span> WB LPI 2023</span></div>
+      </div>
+      <div style="font-size:10px;font-weight:600;padding:4px 8px;background:var(--purple-bg);border-radius:var(--r4);color:var(--text3);margin-bottom:6px">项目预期改善</div>
+      <div class="card" style="margin-bottom:10px">
+        <div class="mrow"><span class="mrow-name">新线总长</span><span class="mrow-val">75 km</span><span class="mrow-note"><span class="ev ev-c">C</span> AIIB P000870</span></div>
+        <div class="mrow"><span class="mrow-name">新建车站数量</span><span class="mrow-val">3个</span><span class="mrow-note"><span class="ev ev-c">C</span> AIIB P000870</span></div>
+        <div class="mrow"><span class="mrow-name">融资结构</span><span class="mrow-val">AIIB USD1.5亿 + IFC</span><span class="mrow-note"><span class="ev ev-c">C</span> CHF计价</span></div>
+        <div class="mrow"><span class="mrow-name">预期容量提升（2030）</span><span class="mrow-val">+1,000万吨/年</span><span class="mrow-note"><span class="ev ev-e">E</span> SESIA报告</span></div>
+      </div>
+      <div style="font-size:10px;font-weight:600;padding:4px 8px;background:var(--teal-bg);border-radius:var(--r4);color:var(--text3);margin-bottom:6px">项目后追踪指标 <span class="ev ev-t">To be verified</span></div>
+      <div class="card">
+        <div class="mrow"><span class="mrow-name">过境班列频次</span><span class="mrow-val">季度统计</span><span class="mrow-note">走廊效率改善信号</span></div>
+        <div class="mrow"><span class="mrow-name">市区段货运取消使用率</span><span class="mrow-val">年度统计</span><span class="mrow-note">Coordination改善验证</span></div>
+        <div class="mrow"><span class="mrow-name">Almaty城市轨道准点率</span><span class="mrow-val">季度监测</span><span class="mrow-note">城市-走廊协同效益</span></div>
+        <div class="mrow"><span class="mrow-name">KTZ财务可持续性指标</span><span class="mrow-val">年度报告</span><span class="mrow-note">Nonsovereign还款能力</span></div>
+      </div>
+    </div>
+
+    <div id="ptab-a-pbc" class="tab-pane">
+      <div class="nb nb-purple" style="margin-bottom:12px;font-size:12px">以下为 ex-ante 诊断，AI-generated diagnosis，不代表官方结论。</div>
+      <div class="label">国家层失效扫描（哈萨克斯坦·全项目统一）</div>
+      <div class="card" style="margin-bottom:14px">
+        <div style="font-size:11px;color:var(--text2);margin-bottom:8px">四类失效在哈萨克斯坦中间走廊系统中的严重程度（0–100）。<strong>此评分为国家层判断，三个项目完全一致。</strong>分值越高代表该类失效对走廊的制约越强。</div>
+        <div style="display:flex;align-items:center;gap:8px;padding:6px 10px;border-bottom:1px solid var(--border)">
+          <span style="font-size:12px;font-weight:500;width:200px;flex-shrink:0">Access Failure <span class="ev ev-c">C</span></span>
+          <div class="bar-bg"><div class="bar-fill" style="width:25%;background:#2DA878"></div></div>
+          <span style="margin-left:8px;font-size:11px;color:var(--green);font-weight:600;width:28px">25</span>
+          <span class="tag tag-green">低</span>
+        </div>
+        <div style="font-size:10px;color:var(--text3);padding:2px 0 6px 10px">Dostyk–Mointy–Aktau走廊通道已连通；非物理接入缺失</div>
+        <div style="display:flex;align-items:center;gap:8px;padding:6px 10px;border-bottom:1px solid var(--border)">
+          <span style="font-size:12px;font-weight:500;width:200px;flex-shrink:0">Utilization Failure <span class="ev ev-c">C</span></span>
+          <div class="bar-bg"><div class="bar-fill" style="width:41%;background:#E8A040"></div></div>
+          <span style="margin-left:8px;font-size:11px;color:var(--amber);font-weight:600;width:28px">41</span>
+          <span class="tag tag-amber">中低</span>
+        </div>
+        <div style="font-size:10px;color:var(--text3);padding:2px 0 6px 10px">需求超过供给（反向Utilization信号）；2024年+63%增长，被压制的是供给侧</div>
+        <div style="display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:var(--r6);background:var(--red-bg);margin:2px 0">
+          <span style="font-size:12px;font-weight:600;width:200px;flex-shrink:0;color:var(--text1)">Efficiency Failure <span class="ev ev-c">C</span></span>
+          <div class="bar-bg"><div class="bar-fill" style="width:89%;background:#D95555"></div></div>
+          <span style="margin-left:8px;font-size:11px;color:var(--red);font-weight:600;width:28px">89</span>
+          <span class="tag tag-red">极高</span>
+        </div>
+        <div style="font-size:10px;color:var(--text3);padding:2px 0 6px 10px">Mointy节点拥堵+绕行149km；端到端18–23天；运输成本高企</div>
+        <div style="display:flex;align-items:center;gap:8px;padding:6px 10px">
+          <span style="font-size:12px;font-weight:500;width:200px;flex-shrink:0">Coordination Failure <span class="ev ev-e">E</span></span>
+          <div class="bar-bg"><div class="bar-fill" style="width:63%;background:#E8A040"></div></div>
+          <span style="margin-left:8px;font-size:11px;color:var(--amber);font-weight:600;width:28px">63</span>
+          <span class="tag tag-amber">中高</span>
+        </div>
+        <div style="font-size:10px;color:var(--text3);padding:2px 0 0 10px">TITR多国协调2024年启动；海关数据互通度低；多边制度成熟度不足</div>
+      </div>
+      <div class="label">项目层 BC 识别 · P000870 Almaty 铁路绕城项目</div>
+      <div class="nb nb-blue" style="font-size:12px;margin-bottom:10px">
+        国家层 Efficiency Failure 评分最高（89分），但 P000870 的核心干预指向<strong> Coordination Failure（63分）</strong>——货运穿越Almaty市区是历史遗留的<strong>城市规划×铁路货运通道制度冲突</strong>，不能单靠运营优化解决，需要工程手段解除制度锁定。
+      </div>
+      <div class="g2" style="margin-bottom:12px">
+        <div class="bc-box">
+          <div class="bc-lbl">本项目 Binding Constraint</div>
+          <div class="bc-val">Coordination Failure</div>
+          <div style="font-size:11px;color:var(--purple);margin-top:3px">城市规划 × 铁路货运通道制度冲突</div>
+        </div>
+        <div class="card">
+          <div class="label">项目作用于失效的路径</div>
+          <div style="font-size:12px;color:var(--text2);line-height:1.7">
+            铁路线路存在 → 排除Access<br>
+            过境需求存在 → 排除需求缺失型<br>
+            延误来自历史遗留规划决策而非技术问题<br>
+            → <strong style="color:var(--text1)">75km绕城线用工程手段解除制度冲突</strong>
+          </div>
+        </div>
+      </div>
+      <div class="label">失效因果链</div>
+      <div class="chain" style="margin-bottom:10px">
+        <span class="chain-item" style="background:var(--purple-bg);color:var(--purple)">城市规划遗留</span><span class="chain-arr">×</span>
+        <span class="chain-item" style="background:var(--purple-bg);color:var(--purple)">铁路货运通道</span><span class="chain-arr">→</span>
+        <span class="chain-item" style="background:var(--amber-bg);color:var(--amber)">货运穿越市区</span><span class="chain-arr">→</span>
+        <span class="chain-item" style="background:var(--red-bg);color:var(--red)">限速+停靠延误</span><span class="chain-arr">→</span>
+        <span class="chain-item">过境效率受损</span>
+      </div>
+      <div class="nb nb-amber" style="font-size:12px"><strong>三项目BC对比价值：</strong>P001038和P000914均针对Efficiency Failure（89分），P000870针对Coordination Failure（63分）。同一国家层评分（56分），三个项目分别作用于不同失效类型，展示了CIF框架跨项目诊断的层次性。</div>
+    </div>
+
+    <div id="ptab-a-pint" class="tab-pane">
+      <div class="label">干预逻辑链条</div>
+      <div class="chain" style="margin-bottom:12px">
+        <span class="chain-item" style="background:var(--purple-bg);color:var(--purple)">IFC+AIIB+MIGA联合结构</span><span class="chain-arr">→</span>
+        <span class="chain-item" style="background:var(--blue-bg);color:var(--accent)">KTZ Nonsovereign贷款</span><span class="chain-arr">→</span>
+        <span class="chain-item" style="background:var(--amber-bg);color:var(--amber)">75km绕城新线</span><span class="chain-arr">→</span>
+        <span class="chain-item" style="background:var(--teal-bg);color:var(--teal)">货运脱离市区</span><span class="chain-arr">→</span>
+        <span class="chain-item" style="background:var(--green-bg);color:var(--green)">货运+客运双提速</span>
+      </div>
+      <div class="g2" style="margin-bottom:12px">
+        <div class="card"><div class="label">Component 1：物理干预（解决Coordination失效的工程方案）</div><div style="font-size:12px;color:var(--text2);line-height:1.8">75km单线电气化新线 <span class="ev ev-c">C</span><br>Zhetygen-Kazybek Bek绕城 <span class="ev ev-c">C</span><br>3个新站 + 13座桥梁 <span class="ev ev-c">C</span><br>2023年11月已提前开工 <span class="ev ev-c">C</span></div></div>
+        <div class="card"><div class="label">Component 2：制度创新（Nonsovereign强化商业约束）</div><div style="font-size:12px;color:var(--text2);line-height:1.8">Nonsovereign结构→KTZ商业约束 <span class="ev ev-c">C</span><br>MIGA担保→政治风险缓释 <span class="ev ev-c">C</span><br>KTZ HR政策性别条款更新 <span class="ev ev-e">E</span></div></div>
+      </div>
+      <div class="label">关键假设</div>
+      <div class="nb nb-ok" style="font-size:12px"><strong>假设1（已具备）：</strong>KTZ运营能力和政治意愿充分，建设已提前开工 <span class="ev ev-c">C</span></div>
+      <div class="nb nb-ok" style="font-size:12px"><strong>假设2（已具备）：</strong>中间走廊货运需求持续增长，绕城线有商业回报 <span class="ev ev-e">E</span></div>
+      <div class="nb nb-amber" style="font-size:12px"><strong>假设3（条件性）：</strong>土地征收1,056ha顺利推进（70%已获取，8.6%在法庭诉讼中） <span class="ev ev-c">C 进行中</span></div>
+    </div>
+
+    <div id="ptab-a-pbeh" class="tab-pane">
+      <div class="label">行为响应假设（显性化）</div>
+      <div class="resp-row"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px"><span style="font-size:12px;font-weight:500;color:var(--text1)">KTZ（直接借款人）</span><span class="tag tag-green">响应概率：极高（已行动）</span></div><div style="font-size:12px;color:var(--text2)">触发：Nonsovereign还款绑定项目完成 → 2023年11月已提前开工</div><div class="nb nb-ok" style="font-size:11px;margin-top:5px">商业约束驱动，建设进度已领先计划 <span class="ev ev-c">C</span></div></div>
+      <div class="resp-row"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px"><span style="font-size:12px;font-weight:500;color:var(--text1)">货运班列运营商</span><span class="tag tag-green">响应概率：高</span></div><div style="font-size:12px;color:var(--text2)">触发：新线开通 → 过境时间缩短 → 可靠时刻表 → 班列频次增加</div><div class="nb nb-ok" style="font-size:11px;margin-top:5px">2024年TITR货运量4.5M吨，过境需求确认存在 <span class="ev ev-c">C</span></div></div>
+      <div class="resp-row"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px"><span style="font-size:12px;font-weight:500;color:var(--text1)">Almaty市区客运系统</span><span class="tag tag-green">响应概率：高（协同收益）</span></div><div style="font-size:12px;color:var(--text2)">触发：货运迁出市区 → 客运容量释放 → Almaty城市轨道效率提升</div><div class="nb nb-blue" style="font-size:11px;margin-top:5px">城市-走廊双赢，是三个KZ项目中唯一具有明确城市协同效益的案例 <span class="ev ev-e">E</span></div></div>
+      <div class="resp-row"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px"><span style="font-size:12px;font-weight:500;color:var(--text1)">哈萨克斯坦政府</span><span class="tag tag-green">响应概率：极高</span></div><div style="font-size:12px;color:var(--text2)">总统令支持；中间走廊国家战略优先级 <span class="ev ev-c">C</span></div></div>
+      <hr class="div">
+      <div class="label">早期预警指标 <span class="ev ev-t">To be verified</span></div>
+      <div class="card">
+        <div class="mrow"><span class="mrow-name">过境班列频次</span><span class="mrow-val">季度统计</span><span class="mrow-note">走廊效率改善信号</span></div>
+        <div class="mrow"><span class="mrow-name">市区段货运取消使用率</span><span class="mrow-val">年度统计</span><span class="mrow-note">Coordination改善验证</span></div>
+        <div class="mrow"><span class="mrow-name">Almaty城市轨道准点率</span><span class="mrow-val">季度监测</span><span class="mrow-note">协同效益验证</span></div>
+        <div class="mrow"><span class="mrow-name">KTZ财务可持续性指标</span><span class="mrow-val">年度报告</span><span class="mrow-note">Nonsovereign还款能力</span></div>
+      </div>
+      <div style="font-size:10px;color:var(--text3);margin-top:10px;padding-top:8px;border-top:1px solid var(--border)">数据来源：AIIB P000870 · SESIA报告（2025年4月）· 批准：2025年7月15日</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PAGE: 其余项目简化汇总 ═══ -->
+<div id="page-project-kz-others" class="page" style="display:none">
+  <div class="page-hdr">
+    <div class="breadcrumb"><span class="bc-crumb" onclick="nav('portfolio')">Portfolio</span><span class="bc-sep">›</span><span class="bc-crumb" onclick="nav('country-kz')">哈萨克斯坦</span><span class="bc-sep">›</span><span class="bc-current">其余9个项目简化诊断</span></div>
+    <div class="page-title">哈萨克斯坦：其余 AIIB 项目简化诊断</div>
+    <div class="page-sub">9个项目 · 统一格式：项目背景 / 约束识别 / 走廊关联 / 行为响应预期</div>
+  </div>
+  <div class="page-body">
+    <div class="data-disclaimer">⚠ 本页诊断为简化版 AI-generated diagnosis，证据等级均为 <span class="ev ev-a">Illustrative</span> 或 <span class="ev ev-t">To be verified</span>。项目基础信息来源：AIIB官网。哈萨克斯坦国家层评分（56分）全平台统一，不在本页重复展示。</div>
+
+    <div class="card" style="margin-bottom:10px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px"><div><div style="font-size:13px;font-weight:600;color:var(--text1)">A-27公路 Atyrau-Dossor 段重建</div><div style="font-size:11px;color:var(--text3);margin-top:2px">P001023 · Transport · Sovereign · 批准：2026年3月 · USD2.38亿 · KazAvtoZhol</div></div><div style="display:flex;gap:6px;align-items:center"><span class="tag tag-blue">BC: Access</span><a href="https://www.aiib.org/en/projects/details/2026/approved/kazakhstan-reconstruction-of-a-27-highway-atyrau-dossor-section-project.html" target="_blank" style="font-size:10px;color:var(--accent)">&#8599; AIIB</a></div></div>
+      <div class="g4" style="gap:8px">
+        <div><div class="label">项目背景</div><div style="font-size:11px;color:var(--text2);line-height:1.6">87km A-27公路升级（2→4车道）。Atyrau为里海港口城市，连接Dossor。哈萨克斯坦首个收费公路试点。</div></div>
+        <div><div class="label">约束识别 <span class="ev ev-a">Illus.</span></div><div style="font-size:11px;color:var(--text2);line-height:1.6">现状2车道限制里海段陆路接入能力 → <strong>Access Failure（功能性接入不足）</strong></div></div>
+        <div><div class="label">走廊关联</div><div style="font-size:11px;color:var(--text2);line-height:1.6">将Atyrau定位为中间走廊西段供料区，与P001038铁路扩容形成陆路接驳互补，支撑Aktau/Kuryk港口腹地。</div></div>
+        <div><div class="label">行为响应预期</div><div style="font-size:11px;color:var(--text2);line-height:1.6">货运企业：路容提升→里海港口供料增加（高）；政府：首个收费公路制度激励到位（高）；滞后：竣工后1–2年。</div></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:10px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px"><div><div style="font-size:13px;font-weight:600;color:var(--text1)">Zhanatas 100MW 风电项目</div><div style="font-size:11px;color:var(--text3);margin-top:2px">Energy · Nonsovereign · 批准：2019年 · Zhambyl地区 · 哈萨克斯坦首个大型风电</div></div><div style="display:flex;gap:6px;align-items:center"><span class="tag tag-teal">BC: Utilization</span><a href="https://www.aiib.org/en/projects/details/2019/approved/Kazakhstan-Zhanatas-100-MW-Wind-Power-Plant.html" target="_blank" style="font-size:10px;color:var(--accent)">&#8599; AIIB</a></div></div>
+      <div class="g4" style="gap:8px">
+        <div><div class="label">项目背景</div><div style="font-size:11px;color:var(--text2);line-height:1.6">100MW风电场，Zhambyl南部省份。哈萨克斯坦首个大型商业化风电，推动从煤电主导向清洁能源转型。</div></div>
+        <div><div class="label">约束识别 <span class="ev ev-a">Illus.</span></div><div style="font-size:11px;color:var(--text2);line-height:1.6">可再生能源利用率低于潜力 → <strong>Utilization Failure（绿色能源需求激活不足）</strong>。政策激励不足是主要制约。</div></div>
+        <div><div class="label">走廊关联</div><div style="font-size:11px;color:var(--text2);line-height:1.6">Zhambyl地区风电支撑Jezkazgan工业走廊和铁路电气化供电，强化走廊Efficiency维度的Resilience子属性。</div></div>
+        <div><div class="label">行为响应预期</div><div style="font-size:11px;color:var(--text2);line-height:1.6">电力企业：稳定上网价格→收益可预期（高）；政府：可再生能源配额渐进推进（中）；工业用户：电力成本下降（中）。</div></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:10px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px"><div><div style="font-size:13px;font-weight:600;color:var(--text1)">Shokpar 100MW 风电项目</div><div style="font-size:11px;color:var(--text3);margin-top:2px">Energy · Nonsovereign · 批准：2023年 · Zhanatas WPP扩展 · EBRD联合融资</div></div><span class="tag tag-teal">BC: Utilization</span></div>
+      <div class="g4" style="gap:8px">
+        <div><div class="label">项目背景</div><div style="font-size:11px;color:var(--text2);line-height:1.6">Zhanatas风电场扩展，同一区域新增100MW。共用基础设施降低边际成本，与Zhanatas WPP合计200MW。</div></div>
+        <div><div class="label">约束识别 <span class="ev ev-a">Illus.</span></div><div style="font-size:11px;color:var(--text2);line-height:1.6">与Zhanatas相同：<strong>Utilization Failure</strong>。项目规模扩大可推动电网侧政策迭代，逐步降低制度性障碍。</div></div>
+        <div><div class="label">走廊关联</div><div style="font-size:11px;color:var(--text2);line-height:1.6">两个项目合计200MW，逐步构建走廊能源Resilience基础，支撑中间走廊基础设施运营韧性。</div></div>
+        <div><div class="label">行为响应预期</div><div style="font-size:11px;color:var(--text2);line-height:1.6">电力购买方：规模效应→电价下降（高）；政府：可再生能源占比提升为政策目标提供弹药（中）；KTZ：铁路运营成本改善（中）。</div></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:10px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px"><div><div style="font-size:13px;font-weight:600;color:var(--text1)">CPIH 220MW 风电组合</div><div style="font-size:11px;color:var(--text3);margin-top:2px">Energy · Nonsovereign · 批准：2025年 · 5个子项目组合 · Borey Energo等</div></div><span class="tag tag-teal">BC: Utilization</span></div>
+      <div class="g4" style="gap:8px">
+        <div><div class="label">项目背景</div><div style="font-size:11px;color:var(--text2);line-height:1.6">5个分布在哈萨克斯坦不同地区的风电子项目，AIIB以Portfolio方式融资，总装机220MW。多地区分布降低单点依赖。</div></div>
+        <div><div class="label">约束识别 <span class="ev ev-a">Illus.</span></div><div style="font-size:11px;color:var(--text2);line-height:1.6"><strong>Utilization Failure</strong>（同前两个风电项目）。Portfolio结构额外改善了Coordination维度——多地区协调管理机制更完善。</div></div>
+        <div><div class="label">走廊关联</div><div style="font-size:11px;color:var(--text2);line-height:1.6">地理分散的风电组合覆盖走廊全线，是走廊能源Coordination改善的体现；强化全国电网韧性，间接支撑走廊稳定。</div></div>
+        <div><div class="label">行为响应预期</div><div style="font-size:11px;color:var(--text2);line-height:1.6">CPIH运营商：组合融资降低单项目风险（高）；哈政府：推动能源转型国家目标达成（高）；走廊基础设施：清洁电力成本渐进下降（中）。</div></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:10px;border-style:dashed;opacity:.75">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px"><div><div style="font-size:13px;font-weight:600;color:var(--text2)">其余5个项目（编号待确认）</div><div style="font-size:11px;color:var(--text3);margin-top:2px">可能含金融类、城市基础设施类等 <span class="ev ev-t">To be verified</span></div></div><span class="tag tag-gray">待确认</span></div>
+      <div class="g4" style="gap:8px">
+        <div><div class="label">项目背景</div><div style="font-size:11px;color:var(--text3)">根据AIIB官网哈萨克斯坦13个项目总数，还有约5个项目待核实。可能包括金融中介类、城市水务类等。</div></div>
+        <div><div class="label">约束识别</div><div style="font-size:11px;color:var(--text3)">待从AIIB官网确认详细信息后补充诊断。</div></div>
+        <div><div class="label">走廊关联</div><div style="font-size:11px;color:var(--text3)">待确认。<a href="https://www.aiib.org/en/projects/list/index.html" target="_blank" style="color:var(--accent)">&#8599; AIIB项目列表</a></div></div>
+        <div><div class="label">行为响应预期</div><div style="font-size:11px;color:var(--text3)">待确认后补充。</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 </main>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
@@ -803,15 +1327,21 @@ function nav(id) {
   document.getElementById('main').scrollTop = 0;
   if (id === 'country-kz') setTimeout(function(){ initRadar('radarCanvas'); }, 80);
   if (id === 'project-kz') setTimeout(function(){ initRadar('projRadar'); }, 80);
+  if (id === 'project-kz-road') setTimeout(function(){ initRadar('roadRadar'); }, 80);
+  if (id === 'project-kz-almaty') setTimeout(function(){ initRadar('almatyRadar'); }, 80);
 }
 
 function switchProjTab(e, id) {
-  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
-  document.querySelectorAll('.tab-pane').forEach(function(p){ p.classList.remove('active'); });
-  e.target.classList.add('active');
+  var btn = e.target;
+  var tabRow = btn.parentElement;
+  tabRow.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  var page = tabRow.parentElement;
+  page.querySelectorAll('.tab-pane').forEach(function(p){ p.classList.remove('active'); });
   var pane = document.getElementById('ptab-' + id);
   if (pane) pane.classList.add('active');
-  if (id === 'pov') setTimeout(function(){ initRadar('projRadar'); }, 60);
+  var radarMap = {'pov':'projRadar','r-pov':'roadRadar','a-pov':'almatyRadar'};
+  if (radarMap[id]) setTimeout(function(){ initRadar(radarMap[id]); }, 60);
 }
 
 function initRadar(canvasId) {
@@ -825,10 +1355,10 @@ function initRadar(canvasId) {
   chartInstances[canvasId] = new Chart(canvas, {
     type: 'radar',
     data: {
-      labels: ['Access','Utilization','Efficiency','Coordination','Resilience'],
+      labels: ['Access','Utilization','Efficiency','Coordination'],
       datasets: [{
         label: 'Score',
-        data: [76, 68, 32, 52, 44],
+        data: [76, 68, 32, 52],
         backgroundColor: 'rgba(123,111,212,0.15)',
         borderColor: '#7B6FD4',
         borderWidth: 2,
